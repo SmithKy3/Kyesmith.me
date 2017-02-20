@@ -1,0 +1,13 @@
+h1 {
+ font-family: Times, Arial, ComicSans;
+ font-size: 32px;
+ color: rgba(30, 30, 195, 0.5);
+ text-align: Center; 
+}
+
+h2 {
+ font-family: Courier, Arial, ComicSans;
+ font-size: 16px;
+ color: rgba(0, 0, 0, 0.75);
+ text-align: Center;
+ }
