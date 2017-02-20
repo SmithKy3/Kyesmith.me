@@ -1,13 +1,17 @@
+body {
+ background-color: rgba(255, 100, 100, 1);
+ }
+
 h1 {
  font-family: Times, Arial, ComicSans;
  font-size: 32px;
- Color: rgba(30, 30, 195, 0.5);
+ Color: rgba(25, 25, 255, 0.5);
  text-align: Center; 
 }
 
 h2 {
  font-family: Courier, Arial, ComicSans;
  font-size: 16px;
- Color: rgba(0, 0, 0, 0.75);
+ Color: rgba(169, 169, 169, 0.75);
  text-align: Center;
 }
