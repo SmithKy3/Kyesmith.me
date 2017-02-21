@@ -29,6 +29,14 @@ a:visited, a:hover {
 }
 
 .textAll {
-  margin: auto;
+ margin: auto;
  width: 50%;
+}
+
+.tableRow1, .tableRow3 {
+  background-color: rgba(251, 255, 242, 0.9);
+}
+
+.tableRow2, .tableRow4 {
+  background-color: rgba(51, 194, 255, 1);
 }
