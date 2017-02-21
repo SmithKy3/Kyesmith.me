@@ -24,10 +24,14 @@ p {
  text-align: Center;
 }
 
-a:hover {
+a:visited, a:hover {
  color: rgba(251, 255, 242, 0.9);
 }
 
-a:visited {
- color: rgba(251, 255, 242, 0.9);
+.Text-Hello {
+ width: 50%;
+}
+
+.Text-Bio {
+ width: 50%;
 }
