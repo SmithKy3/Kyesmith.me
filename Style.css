@@ -28,14 +28,7 @@ a:visited, a:hover {
  color: rgba(251, 255, 242, 0.9);
 }
 
-.textHello {
-  width: 50%;
-}
-
-.textBio {
-  width: 50%;
-}
-
 .textAll {
   margin: auto;
+ width: 50%;
 }
