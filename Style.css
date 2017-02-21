@@ -29,9 +29,13 @@ a:visited, a:hover {
 }
 
 .textHello {
- width: 50%;
+  width: 50%;
 }
 
 .textBio {
- width: 50%;
+  width: 50%;
+}
+
+.textAll {
+  margin: auto;
 }
