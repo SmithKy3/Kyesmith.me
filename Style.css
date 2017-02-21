@@ -1,13 +1,33 @@
+body {
+ background: rgb(51, 194, 255);
+}
+
 h1 {
- font-family: Times, Arial, ComicSans;
- font-size: 64px;
- Color: rgba(0, 5, 255, 0.5);
+ font-family: "Pinyon Script", Arial, ComicSans;
+ font-size: 96px;
+ background-color: rgba(251, 255, 242, 0.9);
+ Color: rgba(51, 194, 255, 1);
  text-align: Center; 
 }
 
 h2 {
- font-family: Courier, Arial, ComicSans;
- font-size: 32px;
- Color: rgba(0, 0, 0, 0.75);
+ font-family: "Pinyon Script", Arial, ComicSans;
+ font-size: 24px;
+ Color: rgba(251, 255, 242, 0.9);
+ text-align: Center; 
+}
+
+p {
+ font-family: Times, Arial, ComicSans;
+ font-size: 24px;
+ Color: rgba(251, 255, 242, 0.9);
  text-align: Center;
+}
+
+a:hover {
+ color: rgba(251, 255, 242, 0.9);
+}
+
+a:visited {
+ color: rgba(251, 255, 242, 0.9);
 }
