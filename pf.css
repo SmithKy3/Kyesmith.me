@@ -1,31 +1,9 @@
 * {
+    padding: 0;
     margin: 0;
-    padding: 0;
-    background-color: rgba(251, 255, 242, 0.9);
 }
 
-body, html {
-    height: 100%;
-}
-
-.parallaxBanner {
-    background-image: url("signaturebanner.png");
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 0;
-}
-
-@media only screen and (max-device-width:1024px) {
-    .parallaxBanner {
-        background-attachement: scroll;
-    }
-}
-
-.all {
-    height: 100%;
+body {
     border: 2px solid rgba(150, 150, 150, 1);
 }
 
@@ -52,13 +30,17 @@ body, html {
     background-color: rgba(51, 194, 255, 1);
 }
 
-.bio {
+.about {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
     font-size: 32px;
     font-family: courier, times, arial;
     color: rgba(150, 150, 150, 1);
     text-align: center;
 }
 
-a {
+a, a:hover, a:visited {
     color: rgba(150, 150, 150, 1);
 }
