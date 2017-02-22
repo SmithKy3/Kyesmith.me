@@ -1,16 +1,23 @@
-* {
-    background-color: rgba(251, 255, 242, 1);
-}
-
-.banner {
+body, html {
     height: 100%;
-    width: 100%;
-    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
-.banner img {
-    height: 70%;
-    width: 70%;
+.parallaxBanner {
+    background-image: url("signaturebanner.png");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+
+@media only screen and (max-device-width:1024px) {
+    .parallaxBanner {
+        background-attachement: scroll;
+    }
 }
 
 h1 {
