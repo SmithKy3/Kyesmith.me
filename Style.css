@@ -37,8 +37,6 @@ body, html {
 
 #navBar li {
     display: inline-block;
-    padding: 0% 1%;
-    margin: 0% 1%;
     font-family: courier, times, arial;
     font-size: 24px;
 }
@@ -46,7 +44,7 @@ body, html {
 #navBar li a {
     text-decoration: none;
     display: block;
-    height: 48px;
+    height: 32px;
     width: 200px;
     color: rgba(251, 255, 242, 0.9);
     background-color: rgba(51, 194, 255, 1);
