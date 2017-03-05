@@ -18,8 +18,9 @@ body, html {
 }
 
 #bannerImg {
-    background-image: url("helloWorld.gif");
     height: 90%;
+    background-image: url("helloWorld.gif");
+    background-color: red;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
