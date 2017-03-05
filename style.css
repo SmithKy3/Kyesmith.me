@@ -20,7 +20,7 @@ body, html {
 #bannerImg {
     height: 90%;
     background: url("helloWorld.gif") no-repeat center center fixed;
-    background-color: red;
+    background-size: 50%;
     padding: 0;
 }
 
@@ -37,8 +37,7 @@ body, html {
 
 @media only screen and (max-device-width:1024px) {
     #bannerImg {
-        background-attachement: scroll;
-        background-position: center;
+        background: url("helloWorldStill.png");
     }
 }
 
