@@ -12,17 +12,38 @@ body, html {
 
 /*Setting up the scrolling effect with the gif/banner */
 
-.parallaxBanner {
+.parallaxArea {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(150, 150, 150, 0.5);
+}
+
+.parallaxImg {
+    height: 90%;
+    width: 100%;
+}
+
+.parallaxImg img {
+    position: fixed;
+    z-index: -1;
+    width: 60%;
+    margin-top: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+/*.parallaxBanner {
     height: 100%;
     background-color: rgba(150, 150, 150, 0.5);
 }
 
 #bannerImg {
     height: 90%;
-    background: url("helloWorld.gif") no-repeat center center fixed;
     background-size: 50%;
     padding: 0;
 }
+*/
 
 #arrow {
     position: absolute;
@@ -38,7 +59,6 @@ body, html {
 @media only screen and (max-device-width:1024px) {
     #bannerImg {
         /*background-attachment: scroll;*/
-        background: url("helloWorldStill.png") no-repeat center center fixed;
     }
 }
 
@@ -107,12 +127,4 @@ body, html {
 
 a {
     color: #3d3d3d;
-}
-
-a {
-    color: #3d3d3d;
-}
-
-d3d;
-
 }
