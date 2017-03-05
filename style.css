@@ -40,7 +40,7 @@ body, html {
 /*Stops page trying to keep parallax effect on small screens */
 
 @media only screen and (max-device-width:1024px) {
-    .parallaxBanner {
+    #bannerImg {
         background-attachement: scroll;
     }
 }
