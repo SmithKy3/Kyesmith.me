@@ -37,7 +37,8 @@ body, html {
 
 @media only screen and (max-device-width:1024px) {
     #bannerImg {
-        background: url("helloWorldStill.png");
+        /*background-attachment: scroll;*/
+        background: url("helloWorldStill.png") no-repeat center center fixed;
     }
 }
 
