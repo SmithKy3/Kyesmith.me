@@ -58,7 +58,7 @@ body, html {
 
 @media only screen and (max-device-width:1024px) {
     #bannerImg {
-        /*background-attachment: scroll;*/
+        background-attachment: scroll;
     }
 }
 
