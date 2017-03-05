@@ -1,22 +1,42 @@
+/*Setting up initial conditions for styling */
+
 * {
     margin: 0;
     padding: 0;
-    background-color: rgba(251, 255, 242, 0.9);
 }
 
 body, html {
     height: 100%;
 }
 
+
+/*Setting up the scrolling effect with the gif/banner */
+
 .parallaxBanner {
-    background-image: url("signaturebanner.png");
     height: 100%;
+    background-color: rgba(150, 150, 150, 0.5);
+}
+
+#bannerImg {
+    background-image: url("helloWorld.gif");
+    height: 90%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 50%;
     padding: 0;
 }
+
+#arrow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    font-size: 24px;
+    color: rgb(51, 194, 255);
+}
+
+
+/*Stops page trying to keep parallax effect on small screens */
 
 @media only screen and (max-device-width:1024px) {
     .parallaxBanner {
@@ -24,39 +44,77 @@ body, html {
     }
 }
 
+
+/*Styling for the rest of the page */
+
 .all {
-    height: 100%;
-    border: 2px solid rgba(150, 150, 150, 1);
+    height: 98%;
+    border: 5px solid rgba(150, 150, 150, 0.5);
+    background-color: rgba(255, 255, 255, 1);
 }
 
-#navBar {
-    width: 70%;
-    margin: auto;
+
+/*Cool nav bar code starts here...*/
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+    min-height: 10%;
+}
+
+.btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
     text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
 }
 
-#navBar li {
-    display: inline-block;
-    font-family: courier, times, arial;
-    font-size: 24px;
+.btn:hover {
+    background-position: right center;
 }
 
-#navBar li a {
+.btn-h {
+    background-image: linear-gradient(to right, rgba(150, 150, 150, 0.5) 6%, rgb(51, 194, 255) 51%, rgb(251, 194, 255) 96%);
     text-decoration: none;
-    display: block;
-    height: 32px;
-    width: 200px;
-    color: rgba(251, 255, 242, 0.9);
-    background-color: rgba(51, 194, 255, 1);
 }
+
+.btn-p {
+    background-image: linear-gradient(to right, rgb(251, 194, 255) 6%, rgb(51, 194, 255) 51%, rgba(150, 150, 150, 0.5) 96%);
+    text-decoration: none;
+}
+
+
+/* and ends here */
 
 .bio {
+    width: 70vw;
+    margin: auto;
     font-size: 32px;
     font-family: courier, times, arial;
-    color: rgba(150, 150, 150, 1);
+    color: #3d3d3d;
     text-align: center;
 }
 
 a {
-    color: rgba(150, 150, 150, 1);
+    color: #3d3d3d;
+}
+
+a {
+    color: #3d3d3d;
+}
+
+d3d;
+
 }

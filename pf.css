@@ -7,40 +7,57 @@ body {
     border: 2px solid rgba(150, 150, 150, 1);
 }
 
-#navBar {
-    width: 70%;
-    margin: auto;
+
+/*Cool nav bar code starts here...*/
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+    min-height: 10%;
+}
+
+.btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
     text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
 }
 
-#navBar li {
-    display: inline-block;
-    padding: 0% 1%;
-    margin: 0% 1%;
-    font-family: courier, times, arial;
-    font-size: 24px;
+.btn:hover {
+    background-position: right center;
 }
 
-#navBar li a {
+.btn-h {
+    background-image: linear-gradient(to right, rgba(150, 150, 150, 0.5) 6%, rgb(51, 194, 255) 51%, rgb(251, 194, 255) 96%);
     text-decoration: none;
-    display: block;
-    height: 48px;
-    width: 200px;
-    color: rgba(251, 255, 242, 0.9);
-    background-color: rgba(51, 194, 255, 1);
 }
+
+.btn-p {
+    background-image: linear-gradient(to right, rgb(251, 194, 255) 6%, rgb(51, 194, 255) 51%, rgba(150, 150, 150, 0.5) 96%);
+    text-decoration: none;
+}
+
+
+/* and ends here */
 
 .about {
-    width: 90%;
+    width: 70vw;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
     font-size: 32px;
     font-family: courier, times, arial;
-    color: rgba(150, 150, 150, 1);
+    color: #3d3d3d;
     text-align: center;
-}
-
-a, a:hover, a:visited {
-    color: rgba(150, 150, 150, 1);
 }
