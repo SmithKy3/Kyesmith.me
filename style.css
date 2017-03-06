@@ -93,13 +93,13 @@ body, html {
 
 .btn {
     flex: 1 1 auto;
-    margin: 10px;
+    margin: 10px 20px;
     padding: 30px;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.5s;
+    transition: 0.75s;
     background-size: 200% auto;
-    color: white;
+    font-family: 'Poppins', sans-serif, times;
     /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
@@ -126,11 +126,15 @@ body, html {
     width: 70vw;
     margin: auto;
     font-size: 32px;
-    font-family: courier, times, arial;
+    font-family: poppins, sans-serif, times;
     color: #3d3d3d;
     text-align: center;
 }
 
-a {
+a, a:visited {
     color: #3d3d3d;
+}
+
+a:hover {
+    color: rgb(251, 194, 255);
 }

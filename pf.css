@@ -4,6 +4,7 @@
 }
 
 body {
+    height: 100%;
     border: 5px solid rgba(150, 150, 150, 0.5);
 }
 
@@ -23,13 +24,13 @@ body {
 
 .btn {
     flex: 1 1 auto;
-    margin: 10px;
+    margin: 10px 20px;
     padding: 30px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 200% auto;
-    color: white;
+    font-family: 'Poppins', sans-serif, times;
     /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
@@ -52,12 +53,41 @@ body {
 
 /* and ends here */
 
-.about {
-    width: 70vw;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 32px;
-    font-family: courier, times, arial;
+
+/* styling for the rest of the page goes on from here */
+
+.allText {
+    width: 60%;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Titillium Web', sans-serif, times;
+    font-weight: 600;
     color: #3d3d3d;
-    text-align: center;
+    font-size: 32px;
+    font-style: italic;
+}
+
+p {
+    font-family: 'Poppins', sans-serif, times;
+    font-weight: 200;
+    color: #3d3d3d;
+    font-size: 20px;
+}
+
+#title {
+    font-size: 40px;
+}
+
+#intro {
+    font-size: 28px;
+}
+
+a, a:visited {
+    color: #3d3d3d;
+}
+
+a:hover {
+    color: rgb(251, 194, 255);
 }
