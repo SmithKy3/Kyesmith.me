@@ -12,10 +12,9 @@ body, html {
 
 /*Setting up the scrolling effect with the gif/banner */
 
-.parallaxArea {
+.parallax {
     height: 100%;
     width: 100%;
-    background-color: rgba(150, 150, 150, 0.5);
 }
 
 .parallaxImg {
@@ -25,11 +24,26 @@ body, html {
 
 .parallaxImg img {
     position: fixed;
+    width: 280px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -140px;
     z-index: -1;
-    width: 60%;
-    margin-top: 15%;
-    margin-left: 20%;
-    margin-right: 20%;
+}
+
+.parallaxBtn {
+    height: 10vh;
+    width: auto;
+}
+
+#arrow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    font-size: 48px;
+    color: rgb(51, 194, 255);
 }
 
 
@@ -44,14 +58,6 @@ body, html {
     padding: 0;
 }
 */
-
-#arrow {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    font-size: 24px;
-    color: rgb(51, 194, 255);
-}
 
 
 /*Stops page trying to keep parallax effect on small screens */
