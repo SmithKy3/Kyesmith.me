@@ -47,26 +47,7 @@ body, html {
 }
 
 
-/*.parallaxBanner {
-    height: 100%;
-    background-color: rgba(150, 150, 150, 0.5);
-}
-
-#bannerImg {
-    height: 90%;
-    background-size: 50%;
-    padding: 0;
-}
-*/
-
-
 /*Stops page trying to keep parallax effect on small screens */
-
-@media only screen and (max-device-width:1024px) {
-    #bannerImg {
-        background-attachment: scroll;
-    }
-}
 
 
 /*Styling for the rest of the page */

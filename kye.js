@@ -1,3 +1,5 @@
+/* code for parallax banner smooth scroll button */
+
 $( document ).ready(function() {
 
 $(function() {

@@ -57,7 +57,8 @@ body {
 /* styling for the rest of the page goes on from here */
 
 .allText {
-    width: 60%;
+    width: 60vw;
+    min-height: 98vh;
     margin: auto;
 }
 
