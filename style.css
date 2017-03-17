@@ -162,7 +162,7 @@ body, html {
     margin: auto;
     padding: 1vh 2vw;
     text-decoration: none;
-    background-image: linear-gradient( 90deg, rgba(186, 200, 213, 0.5) 50%, rgba(123, 155, 179, 0.5));
+    background-image: linear-gradient( 90deg, rgba(186, 200, 213, 0.75), rgba(123, 155, 179, 0.75) 90%);
     box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);
 }
 
