@@ -124,18 +124,10 @@ body, html {
 #iBio {
     width: 70vw;
     margin: auto;
-    font-size: 48px;
+    font-size: 40px;
     font-family: 'Poppins', sans-serif, times;
     color: #3d3d3d;
     text-align: center;
-}
-
-a, a:visited {
-    color: #3d3d3d;
-}
-
-a:hover {
-    color: rgb(251, 194, 255);
 }
 
 
@@ -168,9 +160,10 @@ a:hover {
     width: 60vw;
     height: 15vh;
     margin: auto;
+    padding: 1vh 2vw;
     text-decoration: none;
-    background-color: rgba(215, 203, 199, 0.2);
-    box-shadow: 8px 8px 2px rgba(220, 142, 182, 0.3);
+    background-image: linear-gradient( 90deg, rgba(186, 200, 213, 0.5) 50%, rgba(123, 155, 179, 0.5));
+    box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);
 }
 
 .postLinks {
@@ -180,6 +173,10 @@ a:hover {
 .postC1 {
     width: 30%;
     min-height: 100%;
+}
+
+.postC1 a:hover {
+    color: #3d3d3d;
 }
 
 .returnBtn {
@@ -196,10 +193,6 @@ a:hover {
 
 .returnBtn h1 {
     font-size: 3.5vh;
-}
-
-.postC1 a:hover {
-    color: #3d3d3d;
 }
 
 .postC2 {
@@ -284,6 +277,18 @@ a:hover {
 
 
 /*SHARED*/
+
+a, a:visited {
+    color: #3d3d3d;
+}
+
+a:hover {
+    color: rgb(251, 194, 255);
+}
+
+a {
+    text-decoration: none;
+}
 
 
 /*Stop nav. bar links moulding with the pink,
