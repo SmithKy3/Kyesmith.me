@@ -28,14 +28,15 @@ body, html {
 
 .btn {
     flex: 1 1 auto;
-    margin: 10px 20px;
-    padding: 30px;
+    margin: 30px 20px;
+    padding: 15px 30px;
     text-align: center;
     transition: 0.75s;
     background-size: 200% auto;
     font-family: 'Poppins', sans-serif, times;
     font-weight: 500;
     /* box-shadow: 0 0 20px #eee; */
+    border: 1px solid #3d3d3d;
     border-radius: 10px;
     height: 10%;
     width: 10%;
@@ -174,7 +175,8 @@ body, html {
     padding: 1vh 2vw;
     text-decoration: none;
     background-image: linear-gradient( 90deg, white 80%, rgb(123, 155, 179) 100%);
-    box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);
+    /*box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);*/
+    border: 2px solid #3d3d3d;
 }
 
 .wPostBox {
@@ -184,7 +186,8 @@ body, html {
     padding: 1vh 2vw;
     text-decoration: none;
     background-image: linear-gradient( 90deg, white 80%, rgb(215, 203, 199) 100%);
-    box-shadow: 8px 8px 2px rgba(123, 155, 179, 0.5);
+    /*box-shadow: 8px 8px 2px rgba(123, 155, 179, 0.5);*/
+    border: 1px solid #3d3d3d;
 }
 
 .postLinks {
