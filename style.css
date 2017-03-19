@@ -34,8 +34,8 @@ body, html {
     transition: 0.75s;
     background-size: 200% auto;
     font-family: 'Poppins', sans-serif, times;
-    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-    box-shadow: 0 0 20px #eee;
+    font-weight: 500;
+    /* box-shadow: 0 0 20px #eee; */
     border-radius: 10px;
     height: 10%;
     width: 10%;
@@ -46,17 +46,17 @@ body, html {
 }
 
 .btn-h {
-    background-image: linear-gradient(to right, rgba(150, 150, 150, 0.5), rgb(251, 194, 255) 60%, rgb(51, 194, 255) 65%);
+    background-image: linear-gradient(to right, white 30%, rgb(51, 194, 255) 100%);
     text-decoration: none;
 }
 
 .btn-p {
-    background-image: linear-gradient(to right, rgb(251, 194, 255), rgb(51, 194, 255) 60%, rgba(150, 150, 150, 0.5) 65%);
+    background-image: linear-gradient(to right, white 30%, rgb(123, 155, 179) 100%);
     text-decoration: none;
 }
 
 .btn-wnb {
-    background-image: linear-gradient(to right, rgb(123, 155, 179), rgb(220, 142, 182) 60%, rgb(215, 203, 199) 65%);
+    background-image: linear-gradient(to right, white 30%, rgb(215, 203, 199) 100%);
     text-decoration: none;
 }
 
@@ -156,7 +156,8 @@ body, html {
     font-size: 20px;
 }
 
-.postBox {
+
+/* .postBox {
     width: 60vw;
     height: 15vh;
     margin: auto;
@@ -164,6 +165,26 @@ body, html {
     text-decoration: none;
     background-image: linear-gradient( 90deg, rgba(186, 200, 213, 0.75), rgba(123, 155, 179, 0.75) 90%);
     box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);
+} */
+
+.pfPostBox {
+    width: 60vw;
+    height: 15vh;
+    margin: auto;
+    padding: 1vh 2vw;
+    text-decoration: none;
+    background-image: linear-gradient( 90deg, white 80%, rgb(123, 155, 179) 100%);
+    box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);
+}
+
+.wPostBox {
+    width: 60vw;
+    height: 15vh;
+    margin: auto;
+    padding: 1vh 2vw;
+    text-decoration: none;
+    background-image: linear-gradient( 90deg, white 80%, rgb(215, 203, 199) 100%);
+    box-shadow: 8px 8px 2px rgba(123, 155, 179, 0.5);
 }
 
 .postLinks {
@@ -180,19 +201,21 @@ body, html {
 }
 
 .returnBtn {
-    height: 50%;
-    width: 10vh;
+    height: 410px;
+    width: 75px;
     top: 25%;
     border-radius: 20px;
-    box-shadow: 6px -6px 3px rgb(150, 150, 150);
+    /* box-shadow: 6px -6px 3px rgb(150, 150, 150); */
     margin-left: 2vw;
-    background-image: linear-gradient( rgb(220, 142, 182), rgb(123, 155, 179), rgb(215, 203, 199));
+    background-image: linear-gradient( rgba(51, 194, 255, 0.25), rgba(150, 150, 150, 0.25), rgba(251, 194, 255, 0.25));
     text-align: center;
     position: fixed;
 }
 
 .returnBtn h1 {
-    font-size: 3.5vh;
+    font-family: 'Titillium Web', sans-serif, times;
+    font-style: italic;
+    font-size: 28px;
 }
 
 .postC2 {
@@ -284,10 +307,6 @@ a, a:visited {
 
 a:hover {
     color: rgb(251, 194, 255);
-}
-
-a {
-    text-decoration: none;
 }
 
 
