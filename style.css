@@ -35,11 +35,18 @@ body, html {
     background-size: 200% auto;
     font-family: 'Poppins', sans-serif, times;
     font-weight: 500;
+    font-size: 1.5vw;
     /* box-shadow: 0 0 20px #eee; */
     border: 1px solid #3d3d3d;
     border-radius: 10px;
     height: 10%;
     width: 10%;
+}
+
+@media screen and (max-width: 550px) {
+    .btn {
+        font-size: 3vw;
+    }
 }
 
 .btn:hover {
@@ -112,6 +119,12 @@ body, html {
     font-size: 2vh;
 }
 
+@media screen and (max-width: 600px) {
+    .parallaxBtn {
+        font-size: 2.5vw;
+    }
+}
+
 #parallaxBtnLink {
     text-decoration: none;
 }
@@ -120,7 +133,7 @@ body, html {
 /*Rest of the page*/
 
 .iAll {
-    height: 99%;
+    min-height: 99%;
     border: 5px solid rgba(150, 150, 150, 0.5);
     background-color: rgba(255, 255, 255, 1);
 }
@@ -144,6 +157,12 @@ body, html {
     font-family: 'Poppins', sans-serif, times;
     color: #3d3d3d;
     text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+    #iBio {
+        font-size: 8vw;
+    }
 }
 
 
