@@ -1,359 +1,101 @@
-/*ALL*/
-
-
-/*Setting up initial conditions for styling */
-
 * {
     margin: 0;
     padding: 0;
 }
 
-body, html {
-    height: 100%;
-}
 
+/*
+Google Fonts:
+font-family: 'Poppins', sans-serif;
+font-family: 'Titillium Web', sans-serif;
+font-family: 'VT323', monospace;
+font-family: 'Pacifico', cursive;
+*/
 
-/*Cool nav bar code starts here...*/
-
-.navBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 0 auto;
-    min-height: 10%;
-}
-
-.btn {
-    flex: 1 1 auto;
-    margin: 30px 20px;
-    padding: 15px 30px;
-    text-align: center;
-    transition: 0.75s;
-    background-size: 200% auto;
-    font-family: 'Poppins', sans-serif, times;
-    font-weight: 500;
-    font-size: 1.5vw;
-    /* box-shadow: 0 0 20px #eee; */
-    border: 1px solid #3d3d3d;
-    border-radius: 10px;
-    height: 10%;
-    width: 10%;
-}
-
-@media screen and (max-width: 550px) {
-    .btn {
-        font-size: 3vw;
-    }
-}
-
-.btn:hover {
-    background-position: right center;
-}
-
-.btn-h {
-    background-image: linear-gradient(to right, white 30%, rgb(220, 142, 182) 100%);
-    text-decoration: none;
-}
-
-.btn-p {
-    background-image: linear-gradient(to right, white 30%, rgb(123, 155, 179) 100%);
-    text-decoration: none;
-}
-
-.btn-wnb {
-    background-image: linear-gradient(to right, white 30%, rgb(215, 203, 199) 100%);
-    text-decoration: none;
-}
-
-
-/* and ends here */
-
-
-/*INDEX*/
-
-
-/*Setting up the scrolling effect with the gif/banner */
-
-.parallaxArea {
-    height: 100%;
-    width: 100%;
-}
-
-.parallaxImg {
+html {
     width: 100vw;
-    height: 75vh;
+    background-color: white;
 }
 
-.parallaxImg img {
-    width: 100%;
-    display: table-cell;
+body {
+    width: 100vw;
+}
+
+#sgntrSection {
+    width: 100vw;
+    height: 26vmin;
+    margin-top: 15vh;
+    padding-top: 8vmin;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 10vmin;
+    background-color: rgb(165, 223, 238);
+}
+
+#undCnstSection {
+    height: 15vh;
+    width: 60vw;
+    margin-top: 5vh;
+    margin-left: 20vw;
+    text-align: center;
+    font-family: 'VT323', monospace, times;
+    font-size: 5vmin;
+    color: rgb(165, 223, 238);
+    overflow: hidden;
     position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
-    /*top: 50%;
-    left: 51%;
-    margin-top: -300px;
-    margin-left: -400px;*/
-    position: fixed;
-    z-index: -1;
 }
 
-.parallaxBtn {
-    z-index: 0;
-    height: 4vh;
-    width: 30vw;
-    padding-top: 1vh;
-    margin-left: 35%;
-    margin-right: auto;
-    margin-top: 5%;
+#undCnstSection p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
     text-align: center;
-    background-image: linear-gradient(to right, rgb(220, 142, 182), rgb(123, 155, 179), rgb(205, 203, 199));
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px white, -5px -5px 10px white, 5px -5px 5px white, -5px 5px 5px white;
-    ;
-    font-family: 'Poppins', sans-serif, times;
-    font-weight: 500;
-    font-size: 2vh;
+    /* Starting position */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    -moz-animation: undCnstSection 8s linear infinite;
+    -webkit-animation: undCnstSection 8s linear infinite;
+    animation: undCnstSection 8s linear infinite;
 }
 
-@media screen and (max-width: 600px) {
-    .parallaxBtn {
-        font-size: 2.5vw;
+
+/* Move it (define the animation) */
+
+@-moz-keyframes undCnstSection {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
     }
 }
 
-#parallaxBtnLink {
-    text-decoration: none;
-}
-
-
-/*Rest of the page*/
-
-.iAll {
-    min-height: 99%;
-    border: 5px solid rgba(150, 150, 150, 0.5);
-    background-color: rgba(255, 255, 255, 1);
-}
-
-
-/*Fix issue with border of .iAll dissapearring under the toolbar*/
-
-@media screen and (max-height: 500px) {
-    .iAll {
-        height: 98%;
+@-webkit-keyframes undCnstSection {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
     }
 }
 
-
-/*</fix>.... (this is a joke... comedy is not my forte)*/
-
-#iBio {
-    width: 70vw;
-    margin: auto;
-    font-size: 40px;
-    font-family: 'Poppins', sans-serif, times;
-    color: #3d3d3d;
-    text-align: center;
-}
-
-@media screen and (max-width: 400px) {
-    #iBio {
-        font-size: 8vw;
+@keyframes undCnstSection {
+    0% {
+        -moz-transform: translateX(100%);
+        /* Browser bug fix */
+        -webkit-transform: translateX(100%);
+        /* Browser bug fix */
+        transform: translateX(100%);
     }
-}
-
-
-/*POSTS*/
-
-.postH1 {
-    font-family: 'Titillium Web', sans-serif, times;
-    font-weight: 600;
-    color: #3d3d3d;
-    font-size: 32px;
-    font-style: italic;
-}
-
-.postH2 {
-    font-family: 'Titillium Web', sans-serif, times;
-    font-weight: 600;
-    color: #3d3d3d;
-    font-size: 24px;
-    font-style: italic;
-}
-
-.postP {
-    font-family: 'Poppins', sans-serif, times;
-    font-weight: 200;
-    color: #3d3d3d;
-    font-size: 20px;
-}
-
-
-/* .postBox {
-    width: 60vw;
-    height: 15vh;
-    margin: auto;
-    padding: 1vh 2vw;
-    text-decoration: none;
-    background-image: linear-gradient( 90deg, rgba(186, 200, 213, 0.75), rgba(123, 155, 179, 0.75) 90%);
-    box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);
-} */
-
-.pfPostBox {
-    width: 60vw;
-    height: 15vh;
-    margin: auto;
-    padding: 1vh 2vw;
-    text-decoration: none;
-    background-image: linear-gradient( 90deg, white 80%, rgb(123, 155, 179) 100%);
-    /*box-shadow: 8px 8px 2px rgba(215, 203, 199, 0.5);*/
-    border: 1px solid #3d3d3d;
-}
-
-.wPostBox {
-    width: 60vw;
-    height: 15vh;
-    margin: auto;
-    padding: 1vh 2vw;
-    text-decoration: none;
-    background-image: linear-gradient( 90deg, white 80%, rgb(215, 203, 199) 100%);
-    /*box-shadow: 8px 8px 2px rgba(123, 155, 179, 0.5);*/
-    border: 1px solid #3d3d3d;
-}
-
-.postLinks {
-    text-decoration: none;
-}
-
-.postC1 {
-    width: 30vw;
-    min-height: 100%;
-}
-
-.postC1 a:hover {
-    color: #3d3d3d;
-}
-
-.returnBtn {
-    height: 410px;
-    width: 75px;
-    top: 25%;
-    border-radius: 20px;
-    /* box-shadow: 6px -6px 3px rgb(150, 150, 150); */
-    margin-left: 2vw;
-    background-image: linear-gradient( rgba(51, 194, 255, 0.25), rgba(150, 150, 150, 0.25), rgba(251, 194, 255, 0.25));
-    text-align: center;
-    position: fixed;
-}
-
-.returnBtn h1 {
-    font-family: 'Titillium Web', sans-serif, times;
-    font-style: italic;
-    font-size: 28px;
-}
-
-.postC2 {
-    width: 50vw;
-    min-height: 100%;
-}
-
-.postC2 h1 {
-    text-decoration: underline;
-}
-
-
-/*PORTFOLIO*/
-
-.pfAll {
-    min-height: 100vh;
-    border: 5px solid rgba(150, 150, 150, 0.5);
-}
-
-.pfAllText {
-    width: 60vw;
-    margin: auto;
-}
-
-#pfMainTitle {
-    font-family: 'Titillium Web', sans-serif, times;
-    font-weight: 600;
-    color: #3d3d3d;
-    font-style: italic;
-    font-size: 40px;
-}
-
-#pfIntro {
-    font-family: 'Poppins', sans-serif, times;
-    font-weight: 200;
-    color: #3d3d3d;
-    font-size: 28px;
-}
-
-
-/*WHATNOTBLOG*/
-
-.wAll {
-    min-height: 100vh;
-    border: 5px solid rgba(150, 150, 150, 0.5);
-    background-color: rgba(255, 255, 255, 1);
-}
-
-#wAllText {
-    width: 60vw;
-    margin: auto;
-}
-
-#wMainTitle {
-    font-family: 'Titillium Web', sans-serif, times;
-    font-weight: 600;
-    color: #3d3d3d;
-    font-style: italic;
-    font-size: 40px;
-}
-
-#wIntro {
-    font-family: 'Poppins', sans-serif, times;
-    font-weight: 200;
-    color: #3d3d3d;
-    font-size: 28px;
-}
-
-#dark {
-    text-decoration: line-through;
-}
-
-#rach1, #rach2 {
-    width: 40vw;
-    height: auto;
-}
-
-#de, #suggsDe {
-    height: 50vw;
-    auto;
-}
-
-
-/*SHARED*/
-
-a, a:visited {
-    color: #3d3d3d;
-}
-
-a:hover {
-    color: rgb(251, 194, 255);
-}
-
-
-/*Stop nav. bar links moulding with the pink,
-that comes across the buttons due to same color*/
-
-.navBar a:hover {
-    color: #3d3d3d;
-}
-
-d;
-
+    100% {
+        -moz-transform: translateX(-100%);
+        /* Browser bug fix */
+        -webkit-transform: translateX(-100%);
+        /* Browser bug fix */
+        transform: translateX(-100%);
+    }
 }
