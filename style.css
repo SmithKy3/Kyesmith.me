@@ -47,19 +47,19 @@ body {
 
 #undCnstSection p {
     position: absolute;
-    width: 100%;
+    width: 230%;
     height: 100%;
     margin: 0;
-    line-height: 50px;
+    line-height: 100%;
     text-align: center;
     /* Starting position */
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
     /* Apply animation to this element */
-    -moz-animation: undCnstSection 8s linear infinite;
-    -webkit-animation: undCnstSection 8s linear infinite;
-    animation: undCnstSection 8s linear infinite;
+    -moz-animation: undCnstSection 10s linear infinite;
+    -webkit-animation: undCnstSection 10s linear infinite;
+    animation: undCnstSection 10s linear infinite;
 }
 
 
