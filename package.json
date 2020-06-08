@@ -1,0 +1,27 @@
+{
+  "name": "kyesmith.me",
+  "version": "1.0.0",
+  "description": "Portfolio site of Kye Smith, Junior Javascript developer",
+  "author": "Kye Smith",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd ./node_modules/vue-fragment && npm i",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "deploy": "nuxt generate && push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@nuxt/typescript-build": "^0.6.6",
+    "@nuxt/typescript-runtime": "^0.4.8",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/google-analytics": "^2.3.0",
+    "less-loader": "^6.1.0",
+    "nuxt": "^2.12.2",
+    "push-dir": "^0.4.1",
+    "vue-fragment": "y-nk/vue-fragment#master",
+    "warpspeed": "^1.1.1"
+  }
+}

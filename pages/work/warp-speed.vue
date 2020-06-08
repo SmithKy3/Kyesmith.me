@@ -1,0 +1,72 @@
+<template>
+  <fragment>
+    <portfolio-page :gitUrl="gitUrl" :title="title" :body="body" />
+    <div id="canvasWrapper" />
+  </fragment>
+</template>
+
+<style lang="less">
+#canvasWrapper {
+  display: block;
+  margin: 5vh 0;
+  width: 100%;
+  height: 20%;
+}
+</style>
+
+<script lang="ts">
+import Vue from "vue";
+import { WarpSpeed } from "warpspeed";
+
+const title = "WarpSpeed";
+const gitUrl = "https://www.github.com/smithky3/warp-speed";
+const body = `So, this was more an experiment to get to grips with publishing to NPM more than anything. But, basically, the idea
+came to me while working on my <a href="/work/space-thing">"space simulator"</a>. It's a simple pacakge that returns you an object
+that can be used to mount a canvas playing a continous star warsy animation, and control said animation, if you please. While it
+poses no great use, I'm fairly happy with the result (I want to make it a bit more performant at some point, things get a little
+laggy with large numbers of stars) and it helped take my brain off the space-thing for a day. If you want to skip the ins and
+outs, scroll straight to the bottom for a little demo.
+<br />
+<br/>
+
+In terms of the code, it's a pretty simple algorithm:
+<ul>
+  <li>Generate a random point in 3D space. X and Y page width and height as maximums, respectively. Z can be random but I chose to use page width again.</li>
+  <li>Decrease Z every frame</li>
+  <li>Draw the point on the canvas every frame but multiply X and Y points by (width/Z) to make them move outwards as Z gets closer to 1</li>
+  <li>Repeat for the number of stars you want</li>
+  <li>Profit</li>
+</ul>
+<br />
+
+Seeing as this little project was already a bit of a guinea pig, I decided to take it further as well and wrote it in the style of Douglas Crockford's
+"thisless classless" ideology. It aims to remove the nuisance of the new and this keywords that come with JS/TS and I quite like it. You can have a good
+read about it <a href="https://gist.github.com/mpj/17d8d73275bca303e8d2" target="_blank">here</a>.`;
+
+export default Vue.extend({
+  layout: "portfolio",
+  data() {
+    return {
+      title,
+      gitUrl,
+      body
+    };
+  },
+  mounted() {
+    const warpSpeed = WarpSpeed();
+    const wrapper = document.querySelector("#canvasWrapper") as HTMLElement;
+
+    if (!wrapper) {
+      console.log(
+        `Kye, ya dun goofed. Now there's no demo of your lil warp speed thing. God damnit.`
+      );
+      return;
+    }
+
+    warpSpeed.mountCanvasTo(wrapper);
+    warpSpeed.setNumberOfStars(500);
+    warpSpeed.setStarColor("skyBlue");
+    warpSpeed.render();
+  }
+});
+</script>
