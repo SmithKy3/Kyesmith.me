@@ -10,7 +10,7 @@
   display: block;
   margin: 5vh 0;
   width: 100%;
-  height: 20%;
+  height: 30%;
 }
 </style>
 
@@ -30,11 +30,17 @@ outs, scroll straight to the bottom for a little demo.
 <br/>
 
 In terms of the code, it's a pretty simple algorithm:
+<br/>
+<br/>
 <ul>
-  <li>Generate a random point in 3D space. X and Y page width and height as maximums, respectively. Z can be random but I chose to use page width again.</li>
+  <li>Generate a random point in 3D space. For X and Y, use page width and height as maximums, respectively. Z can be random I suppose but I chose to use page width again</li>
+  <br/>
   <li>Decrease Z every frame</li>
-  <li>Draw the point on the canvas every frame but multiply X and Y points by (width/Z) to make them move outwards as Z gets closer to 1</li>
+  <br/>
+  <li>Draw the point on the canvas every frame but use maxZ/Z as a coefficent to make them move closer to the page borders as Z approaches 1</li>
+  <br/>
   <li>Repeat for the number of stars you want</li>
+  <br/>
   <li>Profit</li>
 </ul>
 <br />

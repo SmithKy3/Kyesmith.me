@@ -8,7 +8,7 @@
 import Vue from "vue";
 
 const title = "KyeSmith.me";
-const gitUrl = "https://www.github.com/smithky3/Kyesmith.me-src";
+const gitUrl = "https://www.github.com/smithky3/Kyesmith.me";
 const body = `So, a little background for context. I first got into coding in my first year at University. We had a module on C.
 While it was very basic (I believe the most complex it got was a command line calculator), it taught me some basics and ignited
 my passion for it. I then went on to look into web development the next year and learnt HTML/CSS to build a simple static site
@@ -28,7 +28,9 @@ fancy animations is a piece of cake straight out of the box, which I always find
 I'm certainly more comfortable with React but I put that down to experience more than anything. I definitely prefer the layout of Vue with their
 Single File Components, with everything relating to a component being all neatly together, but that's acheivable in React with styled-components.
 I'm hoping spending more time working on this will allow me to learn Vue some more and make a solid decision. But anyway, thanks for reading, there's
-a link to the source code at the top of the page, feedback always welcome!`;
+a link to the source code at the top of the page, feedback always welcome!
+<br/>
+<br/>`;
 
 export default Vue.extend({
   layout: "portfolio",

@@ -52,6 +52,7 @@
   z-index: 100;
   width: 30vw;
   height: 100vh;
+  max-height: 100vh;
   background: var(--background);
   border-style: solid;
   border-width: 0 0 5px 5px;
