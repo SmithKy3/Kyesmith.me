@@ -62,7 +62,7 @@ const tagLineOptions = [
 
 function* tagLineDataGen(): Generator<TagLineTypingData> {
   const getRandomWord = () =>
-    tagLineOptions[Math.floor(Math.random() * (tagLineOptions.length - 1))];
+    tagLineOptions[Math.round(Math.random() * (tagLineOptions.length - 1))];
 
   const TYPING_MIN_WAIT = 250;
   const TYPING_MAX_WAIT = 500;
