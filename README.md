@@ -1,6 +1,6 @@
 # kyesmith.me
 
-> My smashing Nuxt.js project
+> My personal site/portfolio/rambling area. Built using Vue, Nuxt, sugar, spice and everything nice.
 
 ## Build Setup
 
