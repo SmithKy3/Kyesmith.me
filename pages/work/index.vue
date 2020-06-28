@@ -44,7 +44,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { cards } from "@/constants/portfolioCards";
+import { cards } from "@/constants/portfolioCardsData";
 
 export default Vue.extend({
   data() {

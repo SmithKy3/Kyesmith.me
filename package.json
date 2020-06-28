@@ -1,7 +1,7 @@
 {
   "name": "kyesmith.me",
   "version": "1.0.0",
-  "description": "Portfolio site of Kye Smith, Junior Javascript developer",
+  "description": "Kye Smith's development endeavours",
   "author": "Kye Smith",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-regular-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/google-analytics": "^2.3.0",

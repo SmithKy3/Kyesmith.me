@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "KyeSmith.me",
+    title: "Kye Smith - Developer",
     meta: [{
         content: "text/html",
         charset: "utf-8"
@@ -78,7 +78,8 @@ export default {
           solid: [
             "faOutdent",
             "faTimes",
-            "faAdjust",
+            "faMoon",
+            "faSun",
             "faHome",
             "faChevronLeft",
             "faEnvelope",

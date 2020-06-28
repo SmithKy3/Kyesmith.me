@@ -1,15 +1,16 @@
 <template>
-  <Fragment>
-    <img src="@/assets/me2.png" />
-    <h2>
-      Hey. I'm Kye and I'm an Electronic Engineering graduate turned developer. I'm currently working as
-      a Junior JavaScript dev at Wren Kitchens. I've a passion for fast code and learning whenever and wherever I can.
-      I also quite like space, photography and guitars.
-    </h2>
+  <fragment>
+    <img src="@/assets/me2.png" alt="Kye Smith" />
+    <p id="bio">
+      Hey. I'm Kye and I'm an Electronic Engineering graduate turned developer.
+      I'm currently working as a Junior JavaScript dev at Wren Kitchens. I've a
+      passion for fast code and learning whenever and wherever I can. I also
+      quite like space, photography and guitars.
+    </p>
     <nuxt-link to="/work">
-      <h1>My Work</h1>
+      <h2 id="workButton">My Work</h2>
     </nuxt-link>
-  </Fragment>
+  </fragment>
 </template>
 
 <style lang="less" scoped>
@@ -19,14 +20,15 @@ img {
   margin: 5vh auto;
 }
 
-h2 {
+#bio {
   position: relative;
   left: 5%;
   margin: 10% auto;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
-h1 {
+#workButton {
   position: relative;
   z-index: initial;
   width: max-content;
@@ -37,6 +39,7 @@ h1 {
   font-family: "Caveat", "cursive";
   font-size: 5rem;
 
+  // Rounded dquare border on square element
   &::after {
     content: "";
     position: absolute;
@@ -49,6 +52,7 @@ h1 {
     border-radius: 5px;
   }
 
+  // Change colour of text and borde on hover
   &:hover {
     color: var(--accent);
 
@@ -58,9 +62,3 @@ h1 {
   }
 }
 </style>
-
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({});
-</script>

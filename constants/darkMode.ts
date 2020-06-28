@@ -1,24 +1,21 @@
-export const darkModeStorageToken = `Dude, where's my dark mode?`;
+export const darkModeKey = `Dude, where's my dark mode`;
+const darkModeClass = "dark-mode";
 
-export function getDarkModeState() {
-  const ls = window.localStorage;
-  const storedValue = ls.getItem(darkModeStorageToken);
+// get darkMode selection from localStorage. If it doesn't exist, set it to false and return that
+export function getDarkModeState(): boolean {
+  const storedDarkMode = localStorage.getItem(darkModeKey);
 
-  if (storedValue === null) {
-    ls.setItem(darkModeStorageToken, "false");
+  if (!storedDarkMode) {
+    setDarkMode(false);
     return false;
   }
 
-  return JSON.parse(storedValue);
+  return JSON.parse(storedDarkMode);
 }
 
-export function toggleDarkMode() {
-  const state = getDarkModeState();
-  const newState = !state;
-
-  !newState && document.body.classList.remove("dark-mode");
-  newState && document.body.classList.add("dark-mode");
-
-  const ls = window.localStorage;
-  ls.setItem(darkModeStorageToken, `${newState}`);
+export function setDarkMode(state: boolean): void {
+  state
+    ? document.body.classList.add(darkModeClass)
+    : document.body.classList.remove(darkModeClass);
+  localStorage.setItem(darkModeKey, JSON.stringify(state));
 }

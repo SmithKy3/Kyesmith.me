@@ -23,6 +23,7 @@ div {
 
 h1 {
   position: relative;
+  font-size: 3.5rem;
   font-weight: 600;
   font-style: italic;
   font-family: "DM Mono", "monospace";
@@ -34,6 +35,7 @@ h2 {
   left: 50%;
   width: max-content;
   height: 2rem;
+  font-size: 1.5rem;
   font-family: "Caveat", "cursive";
   font-weight: 400;
   font-style: italic;

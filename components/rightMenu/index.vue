@@ -7,8 +7,13 @@
     <transition name="slideIn">
       <div v-show="isOpen" id="rightMenuContainer">
         <label id="darkModeContainer">
-          <fa :icon="['fas', 'adjust']" />
-          <input type="checkbox" @change="toggleDarkMode" v-model="isDarkModeActive" />
+          <fa v-if="isDarkModeActive" :icon="['fas', 'sun']" />
+          <fa v-else :icon="['fas', 'moon']" />
+          <input
+            type="checkbox"
+            @click="isDarkModeActive = !isDarkModeActive"
+            v-model="isDarkModeActive"
+          />
           <span id="slider"></span>
         </label>
 
@@ -54,6 +59,7 @@
   height: 100vh;
   max-height: 100vh;
   background: var(--background);
+  box-sizing: border-box;
   border-style: solid;
   border-width: 0 0 5px 5px;
   border-radius: 0 0 0 calc(50vw / 2);
@@ -127,7 +133,7 @@
 <script lang="ts">
 import Vue from "vue";
 import socialsBar from "./socialsBar.vue";
-import { toggleDarkMode, getDarkModeState } from "@/constants/darkMode";
+import { getDarkModeState, setDarkMode } from "@/constants/darkMode";
 
 export default Vue.extend({
   components: {
@@ -139,10 +145,17 @@ export default Vue.extend({
       isDarkModeActive: false
     };
   },
-  methods: {
-    toggleDarkMode
+  watch: {
+    isDarkModeActive: function() {
+      setDarkMode(this.isDarkModeActive);
+    }
   },
-  mounted() {
+  created() {
+    // Prevents issue with window undefined error during development (caused by SSR)
+    if (!process.client) {
+      return;
+    }
+
     this.isDarkModeActive = getDarkModeState();
   }
 });

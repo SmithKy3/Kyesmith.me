@@ -1,5 +1,5 @@
 <template>
-  <div @click="goToPage">
+  <div class="portfolioCard" @click="goToPage">
     <h3>{{ title }}</h3>
     <img :src="imgSrc" />
     <p>
@@ -11,8 +11,8 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-div {
+<style lang="less">
+.portfolioCard {
   position: relative;
   z-index: initial;
   display: inline-block;
@@ -52,6 +52,7 @@ div {
 
   > h3,
   p {
+    font-size: 1.5rem;
     color: var(--background);
   }
 

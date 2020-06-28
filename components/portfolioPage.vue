@@ -23,12 +23,14 @@
 <style lang="less" scoped>
 h1 {
   margin: 5% auto 10%;
+  font-size: 3.5rem;
 }
 
 h2 {
   position: relative;
   width: max-content;
   margin: 5% 0;
+  font-size: 2rem;
 
   &::after {
     content: "";
@@ -42,6 +44,7 @@ h2 {
 }
 
 p {
+  font-size: 1.25rem;
   margin-top: 10%;
 }
 </style>
