@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div id="home-content">
     <title-card />
 
     <nuxt />
@@ -9,7 +9,7 @@
 </template>
 
 <style lang="less">
-#content {
+#home-content {
   position: absolute;
   top: 0;
   left: 20vw;
@@ -26,12 +26,12 @@
 </style>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 import {
   getLightModeState,
   setLightMode,
-  lightModeClass
-} from "@/constants/lightMode";
+  lightModeClass,
+} from '@/constants/lightMode';
 
 export default Vue.extend({
   mounted() {
@@ -45,6 +45,6 @@ export default Vue.extend({
 
     const state = getLightModeState();
     setLightMode(state);
-  }
+  },
 });
 </script>

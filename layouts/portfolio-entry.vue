@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div id="pf-content">
     <nuxt-link to="/portfolio">
       <fa :icon="['fas', 'chevron-left']" id="back" />
     </nuxt-link>
@@ -11,7 +11,7 @@
 </template>
 
 <style lang="less">
-#content {
+#pf-content {
   position: absolute;
   top: 0;
   left: 20vw;
