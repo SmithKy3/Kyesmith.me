@@ -6,13 +6,13 @@
 
     <transition name="slideIn">
       <div v-show="isOpen" id="rightMenuContainer">
-        <label id="darkModeContainer">
-          <fa v-if="isDarkModeActive" :icon="['fas', 'sun']" />
+        <label id="lightModeContainer">
+          <fa v-if="isLightModeActive" :icon="['fas', 'sun']" />
           <fa v-else :icon="['fas', 'moon']" />
           <input
             type="checkbox"
-            @click="isDarkModeActive = !isDarkModeActive"
-            v-model="isDarkModeActive"
+            @click="isLightModeActive = !isLightModeActive"
+            v-model="isLightModeActive"
           />
           <span id="slider"></span>
         </label>
@@ -78,7 +78,7 @@
   color: var(--backgroundAlt);
 }
 
-#darkModeContainer {
+#lightModeContainer {
   position: absolute;
   top: 2vh;
   left: 1vh;
@@ -133,7 +133,7 @@
 <script lang="ts">
 import Vue from "vue";
 import socialsBar from "./socialsBar.vue";
-import { getDarkModeState, setDarkMode } from "@/constants/darkMode";
+import { getLightModeState, setLightMode } from "@/constants/lightMode";
 
 export default Vue.extend({
   components: {
@@ -142,12 +142,12 @@ export default Vue.extend({
   data() {
     return {
       isOpen: false,
-      isDarkModeActive: false
+      isLightModeActive: false
     };
   },
   watch: {
-    isDarkModeActive: function() {
-      setDarkMode(this.isDarkModeActive);
+    isLightModeActive: function() {
+      setLightMode(this.isLightModeActive);
     }
   },
   created() {
@@ -156,7 +156,7 @@ export default Vue.extend({
       return;
     }
 
-    this.isDarkModeActive = getDarkModeState();
+    this.isLightModeActive = getLightModeState();
   }
 });
 </script>

@@ -26,7 +26,7 @@ h1 {
   font-size: 3.5rem;
   font-weight: 600;
   font-style: italic;
-  font-family: "DM Mono", "monospace";
+  font-family: 'DM Mono', 'monospace';
   color: var(--accent);
 }
 
@@ -35,8 +35,8 @@ h2 {
   left: 50%;
   width: max-content;
   height: 2rem;
-  font-size: 1.5rem;
-  font-family: "Caveat", "cursive";
+  font-size: 2rem;
+  font-family: 'Caveat', 'cursive';
   font-weight: 400;
   font-style: italic;
   color: var(--accent) !important;
@@ -44,7 +44,7 @@ h2 {
 </style>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 function getRandomNumber(min: number, max: number): number {
   return Math.random() * (max - min) + min;
@@ -56,10 +56,10 @@ interface TagLineTypingData {
 }
 
 const tagLineOptions = [
-  "Devoleper",
-  "Developear",
-  "Doveloper",
-  "Keyboard Basher"
+  'Devoleper',
+  'Developear',
+  'Doveloper',
+  'Keyboard Basher',
 ];
 
 function* tagLineDataGen(): Generator<TagLineTypingData> {
@@ -79,16 +79,16 @@ function* tagLineDataGen(): Generator<TagLineTypingData> {
       const nextValue = word.substring(0, i);
       yield {
         waitTime,
-        nextValue
+        nextValue,
       };
     } else if (i === 0) {
       word = getRandomWord();
       step = 1;
       const waitTime = getRandomNumber(TYPING_MIN_WAIT, TYPING_MAX_WAIT);
-      const nextValue = "";
+      const nextValue = '';
       yield {
         waitTime,
-        nextValue
+        nextValue,
       };
     } else {
       step = -1;
@@ -98,7 +98,7 @@ function* tagLineDataGen(): Generator<TagLineTypingData> {
       const nextValue = word;
       yield {
         waitTime,
-        nextValue
+        nextValue,
       };
     }
   }
@@ -107,8 +107,8 @@ function* tagLineDataGen(): Generator<TagLineTypingData> {
 export default Vue.extend({
   data() {
     return {
-      tagLineText: "",
-      cursor: ""
+      tagLineText: '',
+      cursor: '',
     };
   },
   mounted() {
@@ -127,8 +127,8 @@ export default Vue.extend({
 
     typeTagLine();
     setInterval(() => {
-      self.cursor = self.cursor === "" ? "|" : "";
+      self.cursor = self.cursor === '' ? '|' : '';
     }, 300);
-  }
+  },
 });
 </script>

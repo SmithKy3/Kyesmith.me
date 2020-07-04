@@ -1,20 +1,16 @@
 <template>
   <div id="content">
-    <nuxt-link to="/work">
+    <nuxt-link to="/portfolio">
       <fa :icon="['fas', 'chevron-left']" id="back" />
     </nuxt-link>
+
     <right-menu />
+
     <nuxt />
   </div>
 </template>
 
-<style scoped>
-a {
-  color: var(--backgroundAlt);
-}
-</style>
-
-<style lang="less" scoped>
+<style lang="less">
 #content {
   position: absolute;
   top: 0;
@@ -30,8 +26,18 @@ a {
     padding-left: 3rem;
   }
 
+  > p {
+    font-size: 1.5rem;
+    margin: 2% 0;
+  }
+
   > h2 {
-    color: var(--mint) !important;
+    margin: 5% 0 2%;
+  }
+
+  > img {
+    width: 100%;
+    margin: 5% 0;
   }
 }
 
@@ -51,8 +57,12 @@ a {
 </style>
 
 <script lang="ts">
-import Vue from "vue";
-import { getDarkModeState, setDarkMode } from "@/constants/darkMode";
+import Vue from 'vue';
+import {
+  getLightModeState,
+  setLightMode,
+  lightModeClass,
+} from '@/constants/lightMode';
 
 export default Vue.extend({
   created() {
@@ -61,8 +71,8 @@ export default Vue.extend({
       return;
     }
 
-    const state = getDarkModeState();
-    setDarkMode(state);
-  }
+    const state = getLightModeState();
+    setLightMode(state);
+  },
 });
 </script>

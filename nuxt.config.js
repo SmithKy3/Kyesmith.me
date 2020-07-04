@@ -51,8 +51,7 @@ export default {
     "@/plugins/fragment",
     "@/plugins/rightMenu",
     "@/plugins/titleCard",
-    "@/plugins/portfolioPage",
-    "@/plugins/portfolioCard"
+    "@/plugins/portfolio",
   ],
   /*
    ** Nuxt.js dev-modules

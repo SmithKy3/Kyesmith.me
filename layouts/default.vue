@@ -27,11 +27,15 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { getDarkModeState, setDarkMode } from "@/constants/darkMode";
+import {
+  getLightModeState,
+  setLightMode,
+  lightModeClass
+} from "@/constants/lightMode";
 
 export default Vue.extend({
   mounted() {
-    getDarkModeState() && document.body.classList.add("dark-mode");
+    getLightModeState() && document.body.classList.add(lightModeClass);
   },
   created() {
     // Prevents issue with window undefined error during development (caused by SSR)
@@ -39,8 +43,8 @@ export default Vue.extend({
       return;
     }
 
-    const state = getDarkModeState();
-    setDarkMode(state);
+    const state = getLightModeState();
+    setLightMode(state);
   }
 });
 </script>

@@ -7,10 +7,14 @@
 html {
   z-index: 0;
   font-size: 1.5vh;
-  --gunmetal: #2e3440;
-  --ghost: #eceff4;
-  --darkSky: #88c0d0;
-  --imperialRed: #e63946;
+
+  --eerieBlack: #212121;
+  --lavender: #bc86fc;
+  --platinum: #e5e5e5;
+  --starBlue: #2274a5;
+  --seaGreen: #3e885b;
+  --dodgerBlue: #008EFF;
+  --tartOrange: #FF5154;
 
   @media screen and (max-width: 1024px) {
     font-size: 1.5vh;
@@ -27,17 +31,18 @@ body,
 }
 
 body {
-  --background: #fff;
-  --backgroundAlt: var(--gunmetal);
-  --accent: var(--imperialRed);
-  --accentAlt: var(--darkSky);
+  --background: var(--eerieBlack);
+  --backgroundAlt: white;
+  --accent: var(--lavender);
+  --accentAlt: var(--starBlue);
+
 }
 
-.dark-mode {
-  --background: var(--gunmetal);
-  --backgroundAlt: var(--ghost);
-  --accent: var(--darkSky);
-  --accentAlt: var(--imperialRed);
+.light-mode {
+  --background: var(--platinum) !important;
+  --backgroundAlt: var(--eerieBlack);
+  --accent: var(--seaGreen);
+  --accentAlt: var(--tartOrange);
 }
 
 a,

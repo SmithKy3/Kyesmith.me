@@ -30,14 +30,14 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     top: -3px;
     right: -3px;
     bottom: -3px;
     left: -3px;
-    background: var(--accentAlt);
+    background: var(--accent);
     border-radius: 5px;
   }
 
@@ -58,6 +58,7 @@
 
   > h3 {
     margin: 5% 10%;
+    color: var(--accentAlt);
   }
 
   > p {
@@ -66,18 +67,19 @@
 
     > span {
       font-size: 1rem;
+      color: var(--accent);
     }
   }
 }
 </style>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 
 export default Vue.extend({
   data() {
     return {
-      test: `<div id="poop" />`
+      test: `<div id="poop" />`,
     };
   },
   props: {
@@ -85,12 +87,12 @@ export default Vue.extend({
     title: String,
     imgSrc: String,
     date: String,
-    description: String
+    description: String,
   },
   methods: {
     goToPage: function() {
       window.location.href += this.href;
-    }
-  }
+    },
+  },
 });
 </script>

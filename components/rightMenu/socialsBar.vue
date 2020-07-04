@@ -47,3 +47,9 @@
   grid-area: 5 / 1 / auto / auto;
 }
 </style>
+
+<script lang="ts">
+// Just to fix veture error
+import Vue from "vue";
+export default Vue.extend({});
+</script>

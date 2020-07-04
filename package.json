@@ -22,8 +22,8 @@
     "warpspeed": "^1.1.1"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.6",
-    "@nuxt/typescript-runtime": "^0.4.9",
+    "@nuxt/typescript-build": "^1.0.3",
+    "@nuxt/typescript-runtime": "^0.4.10",
     "less-loader": "^6.1.0",
     "push-dir": "^0.4.1"
   }
