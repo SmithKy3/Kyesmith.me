@@ -19,7 +19,7 @@
 
         <fa :icon="['fas', 'times']" @click="isOpen = false" id="hideMenuIcon" />
 
-        <socialsBar />
+        <theMeTable />
       </div>
     </transition>
   </fragment>
@@ -132,12 +132,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import socialsBar from "./socialsBar.vue";
+import theMeTable from "./theMeTable.vue";
 import { getLightModeState, setLightMode } from "@/constants/lightMode";
 
 export default Vue.extend({
   components: {
-    socialsBar
+    theMeTable
   },
   data() {
     return {

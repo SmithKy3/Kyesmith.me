@@ -26,7 +26,8 @@
     padding-left: 3rem;
   }
 
-  > p {
+  > p,
+  ul {
     font-size: 1.5rem;
     margin: 2% 0;
   }
@@ -57,12 +58,12 @@
 </style>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 import {
   getLightModeState,
   setLightMode,
-  lightModeClass,
-} from '@/constants/lightMode';
+  lightModeClass
+} from "@/constants/lightMode";
 
 export default Vue.extend({
   created() {
@@ -73,6 +74,6 @@ export default Vue.extend({
 
     const state = getLightModeState();
     setLightMode(state);
-  },
+  }
 });
 </script>

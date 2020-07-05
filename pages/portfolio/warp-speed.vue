@@ -8,56 +8,59 @@
 
     <p>
       So, this was more an experiment to get to grips with publishing to NPM
-      more than anything. But, basically, the idea came to me while working on
-      my <a href="/work/space-thing">"space simulator"</a>. It's a simple
-      pacakge that returns you an object that can be used to mount a canvas to
-      the DOM, play a continous star warsy animation on said canvas and control
-      said animation. If you please. While it poses no great use, I'm fairly
-      happy with the result; although I want to make it a bit more performant at
-      some point (things get a little laggy with large numbers of stars). Plus
-      it helped take my brain off the space-thing for a day. If you want to skip
-      the ins and outs, scroll straight to the bottom for a little demo.
+      than anything else. But, basically, the idea came to me while working on
+      my
+      <a
+        href="/portfolio/space-thing"
+      >"space simulator"</a>. It's a simple
+      pacakge which returns you a ready-to-go HTML5 canvas playing a continous
+      star warsy animation, and allows some control over said animation. While
+      it poses no great use, I'm fairly happy with the result, plus it helped take my brain
+      off the space sim for a day. I do have changes in mind. FIrstly, I want to make it a
+      bit more performant as things get a little laggy with large numbers of stars, and I'd like
+      to add extra animation options, but that might require a re-think of the name.
     </p>
 
     <pf-line-break />
 
-    <p>
-      In terms of the code, it's a pretty simple algorithm:
-    </p>
+    <p>In terms of the code, it's a pretty simple algorithm:</p>
 
-    <p>
-      <ul>
-        <li>
-          Generate a random point in 3D space. For X and Y, use page width and
-          height as maximums, respectively. Z can be random I suppose but I chose
-          to use page width again
-        </li>
-        <br />
-        <li>Decrease Z with every frame</li>
-        <br />
-        <li>
-          Re-draw the point on the canvas with every frame but use maxZ/Z as a
-          coefficent to make them move closer to the page borders as Z approaches
-          1
-        </li>
-        <br />
-        <li>Repeat for the number of stars you want</li>
-        <br />
-        <li>Profit</li>
-      </ul>
-    </p>
+    <ul>
+      <li>
+        Generate a random 3D point:
+        <ul>
+          <li>Maximum value for X should be half of the canvas' width in both the positive and negative directions</li>
+          <li>Do the same for Y but use height</li>
+          <li>Z can be completely random I suppose but I used page width again for consistency</li>
+        </ul>
+      </li>
+      <br />
+      <li>Decrease Z with every frame</li>
+      <br />
+      <li>
+        Each frame, re-draw the circle using X and Y, both multiplied by maximum Z / current Z.
+        <ul>
+          <li>As Z moves closer to zero, the coefficent (max Z / Z) increases, meaning our X and Y points move outwards</li>
+        </ul>
+      </li>
+      <br />
+      <li>Repeat for the number of stars you want</li>
+      <br />
+      <li>Profit</li>
+    </ul>
 
     <pf-line-break />
 
     <p>
       Seeing as this little project was already a bit of a guinea pig, I decided
       to take it further and used Douglas Crockford's "thisless classless"
-      programming style. It aims to remove the problems that come with the
+      programming style for the first time. It aims to remove the problems that come with the
       'new' and 'this' keywords in JS/TS, and I quite like it. You can have a
       good read about it
-      <a href="https://gist.github.com/mpj/17d8d73275bca303e8d2" target="_blank"
-        >here</a
-      >.
+      <a
+        href="https://gist.github.com/mpj/17d8d73275bca303e8d2"
+        target="_blank"
+      >here</a>
     </p>
 
     <pf-line-break />
@@ -74,14 +77,14 @@
 </style>
 
 <script lang="ts">
-import Vue from 'vue';
-import { WarpSpeed } from 'warpspeed';
+import Vue from "vue";
+import { WarpSpeed } from "warpspeed";
 
 export default Vue.extend({
-  layout: 'portfolio-entry',
+  layout: "portfolio-entry",
   mounted() {
     const warpSpeed = WarpSpeed();
-    const wrapper = document.querySelector('#canvasWrapper') as HTMLElement;
+    const wrapper = document.querySelector("#canvasWrapper") as HTMLElement;
 
     if (!wrapper) {
       console.log(
@@ -92,8 +95,8 @@ export default Vue.extend({
 
     warpSpeed.mountCanvasTo(wrapper);
     warpSpeed.setNumberOfStars(500);
-    warpSpeed.setStarColor('skyBlue');
+    warpSpeed.setStarColor("skyBlue");
     warpSpeed.render();
-  },
+  }
 });
 </script>
