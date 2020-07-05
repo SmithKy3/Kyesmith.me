@@ -4,7 +4,7 @@
 
     <pf-demo-link href="https://space-thing.now.sh" />
 
-    <pf-code-link href="https://github.com/smithky3" />
+    <pf-code-link href="https://github.com/smithky3/space-thing" />
 
     <p>
       First off, I know; the name is rather uninventive. But let's move past
