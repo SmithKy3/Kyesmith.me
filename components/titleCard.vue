@@ -2,7 +2,7 @@
   <div>
     <nuxt-link to="/">
       <h1>KYE SMITH</h1>
-      <h2>{{ tagLineText }} {{ cursor }}</h2>
+      <h2>{{ tagLineText }}</h2>
     </nuxt-link>
   </div>
 </template>
@@ -26,25 +26,39 @@ h1 {
   font-size: 3.5rem;
   font-weight: 600;
   font-style: italic;
-  font-family: 'DM Mono', 'monospace';
+  font-family: "DM Mono", "monospace";
   color: var(--accent);
+}
+
+@keyframes blink {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent);
+  }
 }
 
 h2 {
   position: relative;
   left: 50%;
   width: max-content;
-  height: 2rem;
+  height: 2.5rem;
   font-size: 2rem;
-  font-family: 'Caveat', 'cursive';
+  font-family: "Caveat", "cursive";
   font-weight: 400;
   font-style: italic;
   color: var(--accent) !important;
+
+  padding-right: 1rem;
+  border-width: 0 0.25rem 0 0;
+  border-style: solid;
+  animation: blink 0.75s step-end infinite;
 }
 </style>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 function getRandomNumber(min: number, max: number): number {
   return Math.random() * (max - min) + min;
@@ -56,49 +70,56 @@ interface TagLineTypingData {
 }
 
 const tagLineOptions = [
-  'Devoleper',
-  'Developear',
-  'Doveloper',
-  'Keyboard Basher',
+  "Devoleper",
+  "Developear",
+  "Doveloper",
+  "Keyboard Basher"
 ];
 
 function* tagLineDataGen(): Generator<TagLineTypingData> {
   const getRandomWord = () =>
     tagLineOptions[Math.round(Math.random() * (tagLineOptions.length - 1))];
 
-  const TYPING_MIN_WAIT = 250;
-  const TYPING_MAX_WAIT = 500;
-  const TYTPING_FINISHED_EXTRA_WAIT = 750;
+  const TYPING_MIN_WAIT = 200;
+  const TYPING_MAX_WAIT = 400;
+  const DELETING_MIN_WAIT = 50;
+  const DELETING_MAX_WAIT = 200;
+  const TYPING_FINISHED_EXTRA_WAIT = 1000;
 
   let word = getRandomWord();
   let step = 1;
 
   for (let i = 1; true; i += step) {
     if (i > 0 && i < word.length - 1) {
-      const waitTime = getRandomNumber(TYPING_MIN_WAIT, TYPING_MAX_WAIT);
+      const waitTime =
+        step === 1
+          ? getRandomNumber(TYPING_MIN_WAIT, TYPING_MAX_WAIT)
+          : getRandomNumber(DELETING_MIN_WAIT, DELETING_MAX_WAIT);
       const nextValue = word.substring(0, i);
       yield {
         waitTime,
-        nextValue,
+        nextValue
       };
     } else if (i === 0) {
       word = getRandomWord();
       step = 1;
-      const waitTime = getRandomNumber(TYPING_MIN_WAIT, TYPING_MAX_WAIT);
-      const nextValue = '';
+      const waitTime =
+        getRandomNumber(TYPING_MIN_WAIT, TYPING_MAX_WAIT) +
+        TYPING_FINISHED_EXTRA_WAIT;
+      const nextValue = "";
       yield {
         waitTime,
-        nextValue,
+        nextValue
       };
     } else {
       step = -1;
       const waitTime =
         getRandomNumber(TYPING_MIN_WAIT, TYPING_MAX_WAIT) +
-        TYTPING_FINISHED_EXTRA_WAIT;
+        TYPING_FINISHED_EXTRA_WAIT;
       const nextValue = word;
       yield {
         waitTime,
-        nextValue,
+        nextValue
       };
     }
   }
@@ -107,8 +128,7 @@ function* tagLineDataGen(): Generator<TagLineTypingData> {
 export default Vue.extend({
   data() {
     return {
-      tagLineText: '',
-      cursor: '',
+      tagLineText: ""
     };
   },
   mounted() {
@@ -126,9 +146,6 @@ export default Vue.extend({
     }
 
     typeTagLine();
-    setInterval(() => {
-      self.cursor = self.cursor === '' ? '|' : '';
-    }, 300);
-  },
+  }
 });
 </script>
