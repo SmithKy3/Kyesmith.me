@@ -11,7 +11,10 @@
 
       <tr>
         <td>
-          <a href="https://uk.linkedin.com/in/kye-smith-121429165" target="_blank">
+          <a
+            href="https://uk.linkedin.com/in/kye-smith-121429165"
+            target="_blank"
+          >
             <fa :icon="['fab', 'linkedin']" />
           </a>
         </td>
@@ -57,6 +60,6 @@ table {
 
 <script lang="ts">
 // Just to fix veture error
-import Vue from "vue";
+import Vue from 'vue';
 export default Vue.extend({});
 </script>
