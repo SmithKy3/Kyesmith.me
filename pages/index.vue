@@ -15,7 +15,7 @@
 
       </ul>
       
-      You can view his <a href="/cv.pdf">CV here</a> or follow the link below to see some of his personal work.
+      You can view his <a href="/CV.pdf">CV here</a> or follow the link below to see some of his personal work.
     </p>
 
     <nuxt-link to="/portfolio">

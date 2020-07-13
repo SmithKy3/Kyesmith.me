@@ -28,7 +28,7 @@
 
       <tr>
         <td>
-          <a href="/cv.pdf" target="_blank">
+          <a href="/CV.pdf" target="_blank">
             See my CV
             <fa :icon="['fas', 'file']" />
           </a>
