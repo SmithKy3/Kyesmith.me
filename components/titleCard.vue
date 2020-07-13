@@ -10,12 +10,13 @@
 <style lang="less" scoped>
 div {
   position: relative;
-  top: 5%;
-  left: 30%;
-  width: 40%;
+  top: 15%;
+  left: 20%;
+  width: 60%;
   margin-bottom: 10%;
 
-  @media screen and (max-width: 91024px) {
+  @media screen and (max-width: 1024px) {
+    top: 20%;
     left: 0;
     width: 100%;
   }
@@ -28,6 +29,10 @@ h1 {
   font-style: italic;
   font-family: "DM Mono", "monospace";
   color: var(--accent);
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2.5rem;
+  }
 }
 
 @keyframes blink {
@@ -54,6 +59,11 @@ h2 {
   border-width: 0 0.25rem 0 0;
   border-style: solid;
   animation: blink 0.75s step-end infinite;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.5rem;
+    left: 25%;
+  }
 }
 </style>
 

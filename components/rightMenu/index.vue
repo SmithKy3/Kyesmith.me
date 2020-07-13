@@ -6,6 +6,8 @@
 
     <transition name="slideIn">
       <div v-show="isOpen" id="rightMenuContainer">
+        <title-card />
+
         <label id="lightModeContainer">
           <fa v-if="isLightModeActive" :icon="['fas', 'sun']" />
           <fa v-else :icon="['fas', 'moon']" />

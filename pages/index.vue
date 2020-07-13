@@ -1,12 +1,23 @@
 <template>
   <fragment>
+
     <img src="@/assets/me.png" alt="Kye Smith" />
+
     <p id="bio">
-      Hey. I'm Kye and I'm an Electronic Engineering graduate turned developer.
-      I'm currently working as a Junior JavaScript dev at Wren Kitchens. I have a
-      passion for learning whenever, whatever and wherever I can. I also
-      quite like space, photography and guitars.
+      Kye Smith is:
+      <ul>
+
+        <li>An electronic engineering graduate turned developer</li>
+
+        <li>Self-driven and charismatic</li>
+
+        <li>Constantly thinking about, reading about or working on how to be a better developer</li>
+
+      </ul>
+      
+      You can view his <a href="/cv.pdf">CV here</a> or follow the link below to see some of his personal work.
     </p>
+
     <nuxt-link to="/portfolio">
       <h2 id="workButton">My Work</h2>
     </nuxt-link>
@@ -24,8 +35,12 @@ img {
   position: relative;
   left: 5%;
   margin: 10% auto;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 400;
+
+  ul {
+    margin: 5% 0;
+  }
 }
 
 #workButton {

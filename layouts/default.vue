@@ -1,7 +1,5 @@
 <template>
   <div id="home-content">
-    <title-card />
-
     <nuxt />
 
     <right-menu />
@@ -26,12 +24,12 @@
 </style>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 import {
   getLightModeState,
   setLightMode,
-  lightModeClass,
-} from '@/constants/lightMode';
+  lightModeClass
+} from "@/constants/lightMode";
 
 export default Vue.extend({
   mounted() {
@@ -45,6 +43,6 @@ export default Vue.extend({
 
     const state = getLightModeState();
     setLightMode(state);
-  },
+  }
 });
 </script>
