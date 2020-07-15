@@ -78,12 +78,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { WarpSpeed } from "warpspeed";
+import { getWarpSpeedController } from "warpspeed";
 
 export default Vue.extend({
   layout: "portfolio-entry",
   mounted() {
-    const warpSpeed = WarpSpeed();
+    const warpSpeedController = getWarpSpeedController();
     const wrapper = document.querySelector("#canvasWrapper") as HTMLElement;
 
     if (!wrapper) {
@@ -93,10 +93,8 @@ export default Vue.extend({
       return;
     }
 
-    warpSpeed.mountCanvasTo(wrapper);
-    warpSpeed.setNumberOfStars(500);
-    warpSpeed.setStarColor("skyBlue");
-    warpSpeed.render();
+    warpSpeedController.mountCanvasTo(wrapper);
+    warpSpeedController.render();
   }
 });
 </script>
