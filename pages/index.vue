@@ -1,46 +1,87 @@
 <template>
   <fragment>
+    <h1>Kye Smith</h1>
 
-    <img src="@/assets/me.png" alt="Kye Smith" />
+    <div id="aboutMe">
+      <p>
+        Professional developer with a thirst to adapt, learn and succeed.
+        A self-driven, charismatic team player with a genuine interest in
+        software and technology. Happiest when learning or being challenged
+        on current knowledge. Also a keen photographer, guitarist and rubiks cube solver.
+      </p>
 
-    <p id="bio">
-      Kye Smith is:
-      <ul>
+      <h2>Skills:</h2>
 
-        <li>An electronic engineering graduate turned developer</li>
+      <div id="skillsBox">
+        <fa :icon="['fab', 'js']" />
+        <fa :icon="['fab', 'html5']" />
+        <fa :icon="['fab', 'css3-alt']" />
+        <fa :icon="['fab', 'react']" />
+        <fa :icon="['fab', 'vuejs']" />
+      </div>
+    </div>
 
-        <li>Self-driven and charismatic</li>
-
-        <li>Constantly thinking about, reading about or working on how to be a better developer</li>
-
-      </ul>
-      
-      You can view his <a href="/CV.pdf">CV here</a> or follow the link below to see some of his personal work.
-    </p>
+    <h2 class="link">
+      <a href="./CV.pdf">See my CV</a>
+    </h2>
 
     <nuxt-link to="/portfolio">
-      <h2 id="workButton">My Work</h2>
+      <h2 id="workButton">Personal Work</h2>
     </nuxt-link>
   </fragment>
 </template>
 
 <style lang="less" scoped>
-img {
-  width: 50%;
-  display: block;
-  margin: 5vh auto;
+h1 {
+  font-size: 3rem;
 }
 
-#bio {
+#aboutMe {
+  p {
+    position: relative;
+    left: 5%;
+    margin: 10% auto;
+    font-size: 2rem;
+    font-weight: 400;
+
+    ul {
+      margin: 5% 0;
+    }
+  }
+
+  h2 {
+    position: relative;
+    left: 5%;
+    margin: 5% 0;
+    font-size: 2rem;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  #skillsBox {
+    float: right;
+    width: 95%;
+    height: max-content;
+    margin: 0 0 10%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+    > svg {
+      color: var(--backgroundAlt);
+      font-size: 4rem;
+    }
+  }
+}
+
+.link {
   position: relative;
   left: 5%;
-  margin: 10% auto;
   font-size: 2rem;
-  font-weight: 400;
-
-  ul {
-    margin: 5% 0;
-  }
+  text-decoration: underline;
 }
 
 #workButton {

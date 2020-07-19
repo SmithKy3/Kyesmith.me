@@ -86,7 +86,17 @@ export default {
             "faExternalLinkAlt",
             "faCode"
           ],
-          brands: ["faGithub", "faLinkedin", "faInstagramSquare"]
+          brands: [
+            "faGithub",
+            "faLinkedin",
+            "faInstagramSquare",
+            "faJs",
+            "faHtml5",
+            "faCss3Alt",
+            "faReact",
+            "faGit",
+            "faVuejs"
+          ]
         }
       }
     ]

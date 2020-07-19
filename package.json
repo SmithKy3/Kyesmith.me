@@ -19,7 +19,7 @@
     "@nuxtjs/google-analytics": "^2.3.0",
     "nuxt": "^2.12.2",
     "vue-fragment": "y-nk/vue-fragment#master",
-    "warpspeed": "^2.0.3"
+    "warpspeed": "^2.0.5"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^1.0.3",

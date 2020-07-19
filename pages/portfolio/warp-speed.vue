@@ -13,12 +13,15 @@
       <a
         href="/portfolio/space-thing"
       >"space simulator"</a>. It's a simple
-      pacakge which returns you a ready-to-go HTML5 canvas playing a continous
+      package which returns you a ready-to-go HTML5 canvas playing a continous
       star warsy animation, and allows some control over said animation. While
       it poses no great use, I'm fairly happy with the result, plus it helped take my brain
-      off the space sim for a day. I do have changes in mind. FIrstly, I want to make it a
-      bit more performant as things get a little laggy with large numbers of stars, and I'd like
-      to add extra animation options, but that might require a re-think of the name.
+      off the space sim for a day. I've rewritten it since it's initial release and I'm
+      now very pleased with the result. I think next I'd like to tinker with adding more animation
+      options. You can find the package
+      <a
+        href="https://www.npmjs.com/package/warpspeed"
+      >here.</a>
     </p>
 
     <pf-line-break />
@@ -29,7 +32,7 @@
       <li>
         Generate a random 3D point:
         <ul>
-          <li>Maximum value for X should be half of the canvas' width in both the positive and negative directions</li>
+          <li>Maximum value for X should be half of the canvas' width (assuming you are using the center as the origin)</li>
           <li>Do the same for Y but use height</li>
           <li>Z can be completely random I suppose but I used page width again for consistency</li>
         </ul>
@@ -55,12 +58,13 @@
       Seeing as this little project was already a bit of a guinea pig, I decided
       to take it further and used Douglas Crockford's "thisless classless"
       programming style for the first time. It aims to remove the problems that come with the
-      'new' and 'this' keywords in JS/TS, and I quite like it. You can have a
+      'new' and 'this' keywords in JS/TS, and I must say I'm quite the fan. My only gripe
+      is how verbose it can make your code compared to standard classes. You can have a
       good read about it
       <a
         href="https://gist.github.com/mpj/17d8d73275bca303e8d2"
         target="_blank"
-      >here</a>
+      >here.</a>
     </p>
 
     <pf-line-break />
@@ -83,7 +87,7 @@ import { getWarpSpeedController } from "warpspeed";
 export default Vue.extend({
   layout: "portfolio-entry",
   mounted() {
-    const warpSpeedController = getWarpSpeedController();
+    const warpSpeedController = getWarpSpeedController(750, "rainbow", 1.5, 2);
     const wrapper = document.querySelector("#canvasWrapper") as HTMLElement;
 
     if (!wrapper) {
