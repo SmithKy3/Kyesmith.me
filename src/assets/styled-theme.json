@@ -1,0 +1,20 @@
+{
+    "colors": {
+        "white": "#F4F5F6",
+        "black": "#071E22",
+        "blue": "#4464AD",
+        "red": "#DB162F",
+        "marigold": "#ECA400",
+        "meadow": "#00BD9D"
+    },
+    "fonts": {
+        "openSans": "'Open Sans', sans-serif",
+        "prompt": "'Prompt', sans-serif",
+        "playfairDisplay": "'Playfair Display', serif"
+    },
+    "screenSizes": {
+        "small": "550px",
+        "medium": "800px",
+        "large": "1200px"
+    }
+}

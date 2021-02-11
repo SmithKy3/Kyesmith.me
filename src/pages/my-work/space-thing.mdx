@@ -1,0 +1,33 @@
+import { CodeSlash, Play } from '@styled-icons/bootstrap';
+
+## Space-thing
+#### (i know... very inventive naming)
+
+<p><a href="https://github.com/SmithKy3/space-thing" target="_blank">Repo / code here <CodeSlash /></a></p>
+
+<p><a href="https://space-thing.now.sh" target="_blank">Demo here <Play /></a></p>
+
+This little project began as a fun exercise in strengthening my vector algebra knowledge during the great
+lockdown 1.0 of 2020. The original idea was to create a small universe sandbox of sorts that randomly generates
+a few solar systems on page load. Each of these systems would consist of one star and one to “a few”
+satellites / planets. When a system was spawned, it would have a starting velocity and direction and would be
+orbiting the center of the screen. Then, chaos would slowly ensue as gravity took hold of each of the systems until
+they all end in a lump in the center of the screen.
+
+I didn’t get that far.
+
+---
+
+It turns out the intricacies of orbital mechanics require a degree in physics, at the very least,
+for a very good reason; it’s complex. I did however manage to nail the calculations for a single
+system’s orbits after spending a while looking into the spherical coordinate system and how to relate
+this to the cartesian system. I still plan to re-join this project and build on my original
+aims, but i’m allowing more career-centric skills to take precedence right now.
+
+---
+
+All of the mathematics / the engine handling the calculating and updating of positions was written
+by myself and then it uses HTML5 canvas to draw & animate the whole scene. The whole thing is built on
+top of a React app using Next.js and Vercel for hosting. A working demo is up and accessible via the link
+at the top of this page. At the moment, a single star and satellite are generated and there’s a small
+menu which allows some control over the satellite’s orbit.

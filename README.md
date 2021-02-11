@@ -1,22 +1,9 @@
-# kyesmith.me
+# KyeSmith.me
 
-> My personal site/portfolio/rambling area. Built using Vue, Nuxt, sugar, spice and everything nice.
+This is a small portfolio site written (by me) in TypeScript, using Gatsby, MDX, styled-components and SCSS.
+Feel free to take a look at the result at https://kyesmith.me
 
-## Build Setup
+If, for some reason, you'd like to run it locally, simply clone the repo and run
+    npm i
+    npm run dev
 
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
