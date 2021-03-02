@@ -23,7 +23,7 @@ export const Text = styled.p`
     transform: translateY(-50%);
     z-index: 1;
     width: 100%;
-    color: var(--color--background);
+    color: ${props => props.theme.colors.white};
     text-align: center;
     font-family: ${props => props.theme.fonts.playfairDisplay};
     font-size: 40px;
