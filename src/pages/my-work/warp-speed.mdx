@@ -1,3 +1,9 @@
+---
+title: Warp-Speed
+description: A star-wars-style warp speed effect by Kye Smith
+keywords: npm,html5,canvas,typescript
+---
+
 import { CodeSlash } from '@styled-icons/bootstrap';
 import { Npm } from '@styled-icons/simple-icons';
 import { WarpSpeedCanvas } from '@components/WarpSpeedCanvas';
@@ -8,13 +14,23 @@ import { WarpSpeedCanvas } from '@components/WarpSpeedCanvas';
 
 #### (no, it's not a gif)
 
-<p><a href="https://github.com/SmithKy3/warp-speed" target="_blank">Repo / code here <CodeSlash /></a></p>
+<p>
+  <a href="https://github.com/SmithKy3/warp-speed" target="_blank">
+    Repo / code here <CodeSlash />
+  </a>
+</p>
 
-<p><a href="https://www.npmjs.com/package/warpspeed" target="_blank">NPM page here <Npm /></a></p>
+<p>
+  <a href="https://www.npmjs.com/package/warpspeed" target="_blank">
+    NPM page here <Npm />
+  </a>
+</p>
 
 This is an NPM package I wrote during the first COVID-19 lockdown in 2020 and it served two purposes;
 introduce me to publishing to NPM and to provide me with a break from my
-<a href="/my-work/space-thing">space-thing</a> project that I was also building out at the time.
+
+<a href="/my-work/space-thing">space-thing</a> project that I was also building out
+at the time.
 
 I was working through a lot of Vector algebra with HTML5 canvas animations and was figuring out
 how best to give the feel of depth on a screen / web page. I decided I could probably remake the star wars
@@ -24,12 +40,12 @@ It’s since had a couple of minor upgrades but the overarching algorithm is muc
 For each "star", I'm doing the following:
 
 - Generate a random point in 3D space
-    - Clamp X between 0 and half of the canvas width
-    - Clamp Y between 0 and half of the canvas height
-    - Z needs to be clamped between 0 and any number really, but I found using the max X works well
+  - Clamp X between 0 and half of the canvas width
+  - Clamp Y between 0 and half of the canvas height
+  - Z needs to be clamped between 0 and any number really, but I found using the max X works well
 - Every frame / every time you redraw the star:
-    - Instead of using just X and Y as the center of the star on the canvas, multiply both by (MAX_Z / Z)
-    - Decrement Z
+  - Instead of using just X and Y as the center of the star on the canvas, multiply both by (MAX_Z / Z)
+  - Decrement Z
 
 As Z moves approaches zero, the aforementioned coefficient (MAX_Z / Z) approaches infinity, meaning X and Y increase
 and move towards the edge of the screen.

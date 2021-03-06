@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Helmet } from 'react-helmet';
 import { DefaultLayout } from '@layouts/default';
 import * as ThorOhThorSections from '@/src/components/page-sections/ThorOhThor';
 import { getWarpSpeedController, WarpSpeedController } from 'warpspeed';
@@ -32,6 +33,10 @@ class ThorOhThor extends React.Component<{}, {}> {
     public render() {
         return (
             <DefaultLayout pageName="404">
+                <Helmet>
+                    <title>This is not the page you're looking for...</title>
+                    <meta name="keywords" content={'kye,smith,404'}/>
+                </Helmet>
                 <ThorOhThorSections.CanvasContainer
                     ref={this.canvasContainerRef}
                     onClick={() => window.location.href = '/'}

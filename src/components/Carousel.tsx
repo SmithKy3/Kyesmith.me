@@ -138,7 +138,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
 
         return (
             <section className="carousel" id={this.props.name}>
-                <button className="carousel-control carousel-control-prev" onClick={() => this.handleControlClick('right')}></button>
+                <button className="carousel-control carousel-control-prev" onClick={() => this.handleControlClick('right')} name="My Skills Carousel - Previous"></button>
 
                 <div className="carousel-track-container" ref={this.visibleTrackRef}>
                     <div
@@ -150,7 +150,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
                     </div>
                 </div>
         
-                <button className="carousel-control carousel-control-next" onClick={() => this.handleControlClick('left')}></button>
+                <button className="carousel-control carousel-control-next" onClick={() => this.handleControlClick('left')} name="My Skills Carousel - Next"></button>
             </section>
         );
     }

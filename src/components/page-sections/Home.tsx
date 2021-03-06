@@ -218,7 +218,7 @@ const WorkCard: React.FC<WorkCardProps> = (props) => {
     <WorkCardWrapper>
       <a href={`/my-work/${card.slug}`}>
         <h3>{card.title}</h3>
-        <img src={src} />
+        <img src={src} alt={card.title} />
         <p>{card.description}</p>
       </a>
     </WorkCardWrapper>

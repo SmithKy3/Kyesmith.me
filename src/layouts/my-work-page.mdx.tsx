@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { PageProps } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import { Header } from '@/src/components/Header';
 import styled, { ThemeProvider } from 'styled-components';
 import theme from "@assets/styled-theme.json";
@@ -97,14 +99,30 @@ const BackButton = styled.a`
     }
 `;
 
-const WorkPageLayout: React.FC<{}> = ({ children }) => {
+type WorkPageProps = PageProps & {
+    pageContext: {
+        frontmatter: Record<string, string>;
+    }
+};
 
+const WorkPageLayout: React.FC<WorkPageProps> = (props) => {
+    const { frontmatter } = props.pageContext;
+    console.log(frontmatter);
     return (
         <ThemeProvider theme={theme}>
+            <Helmet
+                htmlAttributes={{
+                    lang: 'en',
+                }}
+            >
+                <title>{frontmatter.title || 'KyeSmith.me - my work'}</title>
+                <meta name="description" content={frontmatter.description || ''}/>
+                <meta name="keywords" content={`${frontmatter.keywords},kye,smith` || 'kye,smith'}/>
+            </Helmet>
             <Header />
             <Main>
                 <BackButton id="back-button" href="/#my-work"><ArrowLeftSquareFill /></BackButton>
-                { children }
+                { props.children }
             </Main>
         </ThemeProvider>
     );
