@@ -107,7 +107,7 @@ type WorkPageProps = PageProps & {
 
 const WorkPageLayout: React.FC<WorkPageProps> = (props) => {
     const { frontmatter } = props.pageContext;
-    console.log(frontmatter);
+
     return (
         <ThemeProvider theme={theme}>
             <Helmet
