@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FancyContainer } from '@/src/components/FancyContainer';
 import { Carousel, CarouselProps } from '@/src/components/Carousel';
 import { FileEarmarkPerson } from '@styled-icons/bootstrap'
-import { Github, Linkedin, Html5, Css3, Javascript, Typescript, Sass, ReactLogo, VueDotJs, Webpack, Bigcommerce } from '@styled-icons/simple-icons';
+import { Github, Linkedin, Html5, Css3, Javascript, Typescript, Sass, ReactLogo, Redux, ReduxSaga, Webpack, Bigcommerce } from '@styled-icons/simple-icons';
 import myWorkCards from '@assets/my-work-cards.json';
 import viewCursor from '@assets/images/view.png';
 
@@ -54,7 +54,11 @@ const BioContainer = styled(FancyContainer)`
 export const Bio: React.FC<{}> = () =>  {
   return (
     <BioContainer>
-      <p>Frontend web developer specialising in React and Typescript but moving towards a full-stack skill-set. Currently working for an eCommerce agency in Birmingham, UK, specifically on the BigCommerce platform. Also likes to play with Rubik's cubes.</p>
+      <p>
+        Frontend developer specialising in Typescript, React & Redux.
+        Currently based in Derby, UK, working remotely for an exciting B2B SaaS startup.
+        Also likes to play with Rubik's cubes.
+      </p>
       <p>You can find my CV <a href="/CV.pdf" target="_blank">here <FileEarmarkPerson /></a>,</p>
       <p> my Github <a href="https://github.com/SmithKy3" target="_blank">here <Github /></a>,</p>
       <p>and my LinkedIn <a href="https://uk.linkedin.com/in/kye-smith-121429165" target="_blank">here <Linkedin/></a></p>
@@ -101,7 +105,8 @@ const skillIcons = [
   Typescript,
   Sass,
   ReactLogo,
-  VueDotJs,
+  Redux,
+  ReduxSaga,
   Webpack,
   Bigcommerce
 ];
