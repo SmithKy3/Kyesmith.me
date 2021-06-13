@@ -84,15 +84,6 @@ const CarouselContainer = styled(FancyContainer)`
     font-size: 24px;
   }
 
-  > h3 {
-    width: 30% auto;
-    margin: 0 auto 1rem;
-    color: var(--color--main);
-    text-align: center;
-    font-size: 12px;
-    font-weight: 200;
-  }
-
   .carousel svg {
     fill: var(--color--main);
   }
@@ -120,8 +111,7 @@ const skillSetCarouselProps: CarouselProps = {
 export const SkillSetCarousel: React.FC<{}> = () => {
     return (
         <CarouselContainer>
-          <h2>My primary skill-set</h2>
-          <h3>(including but not limited to)</h3>
+          <h2>My favourites:</h2>
           <Carousel {...skillSetCarouselProps}>
             {skillIcons.map((Icon, index) => <Icon key={`skill-set-carousel-icon-${index}`} />)}
           </Carousel>
