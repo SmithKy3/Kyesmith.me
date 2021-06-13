@@ -5,7 +5,6 @@ import { Carousel, CarouselProps } from '@/src/components/Carousel';
 import { FileEarmarkPerson } from '@styled-icons/bootstrap'
 import { Github, Linkedin, Html5, Css3, Javascript, Typescript, Sass, ReactLogo, Redux, ReduxSaga, Webpack, Bigcommerce } from '@styled-icons/simple-icons';
 import myWorkCards from '@assets/my-work-cards.json';
-import viewCursor from '@assets/images/view.png';
 
 //------------------------------------------
 // Bio / intro components
@@ -174,7 +173,7 @@ const WorkCardWrapper = styled.article`
     z-index: 1;
     padding: 5% 2.5%;
     text-decoration: none;
-    cursor: url('${viewCursor}') 32 16, pointer;
+    cursor: help;
   }
 
   h3 {
