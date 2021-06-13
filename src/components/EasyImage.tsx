@@ -13,7 +13,5 @@ interface EasyImageProps {
 }
 
 export const EasyImage: React.FC<EasyImageProps> = (props) => {
-    const src = require(`@assets/images/${props.imgFileName}`);
-
-    return (<Img src={src} style={props.style}/>);
+    return (<Img src={`/img/${props.imgFileName}`} style={props.style}/>);
 }
