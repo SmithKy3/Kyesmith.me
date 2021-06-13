@@ -1,4 +1,4 @@
-import { Lightning, Sun, Moon } from '@styled-icons/bootstrap';
+import { Lightning, SunFill, MoonFill } from '@styled-icons/bootstrap';
 import styled from 'styled-components';
 
 export const HeaderLightningBolt = styled(Lightning)`
@@ -7,7 +7,7 @@ export const HeaderLightningBolt = styled(Lightning)`
     height: 32px;
 `;
 
-export const LightModeIcon = styled(Sun)<{ isHidden: boolean }>`
+export const LightModeIcon = styled(SunFill)<{ isHidden: boolean }>`
     position: absolute;
     top: ${props => props.isHidden ? '50%' : '-50vh'};
     right: 5%;
@@ -23,7 +23,7 @@ export const LightModeIcon = styled(Sun)<{ isHidden: boolean }>`
     }
 `;
 
-export const DarkModeIcon = styled(Moon)<{ isHidden: boolean }>`
+export const DarkModeIcon = styled(MoonFill)<{ isHidden: boolean }>`
     position: absolute;
     top: 50%;
     right: ${props => props.isHidden ? '5%' : '-50vh'};
