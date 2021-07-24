@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { HeaderLightningBolt, LightModeIcon, DarkModeIcon } from './icons';
-import * as DarkMode from '@/src/helpers/dark-mode';
+import * as DarkMode from 'helpers/dark-mode';
 
 interface HeaderState {
     isDarkModeEnabled: boolean;
@@ -68,9 +68,9 @@ export class Header extends React.Component<{}, HeaderState> {
         return (
             <HeaderContainer>
                 <HeaderText>
-                    <Link to="/">
+                    {/* <Link href="/">
                         Kye Smith <HeaderLightningBolt />
-                    </Link>
+                    </Link> */}
                 </HeaderText>
                 <LightModeIcon isHidden={this.state.isDarkModeEnabled} onClick={() => this.handleThemeIconClick()} />
                 <DarkModeIcon isHidden={!this.state.isDarkModeEnabled} onClick={() => this.handleThemeIconClick()} />

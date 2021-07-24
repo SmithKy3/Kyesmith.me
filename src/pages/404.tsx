@@ -1,51 +1,39 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import { DefaultLayout } from '@layouts/default';
-import * as ThorOhThorSections from '@/src/components/page-sections/ThorOhThor';
-import { getWarpSpeedController, WarpSpeedController } from 'warpspeed';
+import React, { createRef, useEffect, useMemo } from 'react';
+import { NextLayoutPage } from 'next';
+import Head from 'next/head';
+import { getWarpSpeedController } from 'warpspeed';
 
-class ThorOhThor extends React.Component<{}, {}> {
-    private canvasContainerRef = React.createRef<HTMLDivElement>();
-    private warpSpeedController: WarpSpeedController | undefined;
- 
-    public constructor(props: React.PropsWithChildren<{}>) {
-        super(props);
+import { DefaultLayout } from 'components/layouts/Default';
+import * as ThorOhThorSections from 'components/page-sections/ThorOhThor';
 
-        const isSSR = typeof window === 'undefined';
-        if (!isSSR) {
-            this.warpSpeedController = getWarpSpeedController();
+const FourOFour: NextLayoutPage = () => {
+    const canvasContainerRef = createRef<HTMLDivElement>();
+    const warpspeedController = useMemo(() => getWarpSpeedController(), []);
+
+    useEffect(() => {
+        if (canvasContainerRef.current) {
+            warpspeedController.mountCanvasTo(canvasContainerRef.current);
+            warpspeedController.render();
+
+            return () => warpspeedController.dismountCanvas();
         }
-    }
+    }, [warpspeedController, canvasContainerRef]);
 
-    public componentDidMount() {
-        if (!this.canvasContainerRef?.current || !this.warpSpeedController) return;
-
-        this.warpSpeedController.mountCanvasTo(this.canvasContainerRef.current);
-        this.warpSpeedController.render();
-    }
-
-    public componentWillUnmount() {
-        if (!this.warpSpeedController) return;
-
-        this.warpSpeedController.dismountCanvas();
-    }
-
-    public render() {
-        return (
-            <DefaultLayout pageName="404">
-                <Helmet>
-                    <title>This is not the page you're looking for...</title>
-                    <meta name="keywords" content={'kye,smith,404'}/>
-                </Helmet>
-                <ThorOhThorSections.CanvasContainer
-                    ref={this.canvasContainerRef}
-                    onClick={() => window.location.href = '/'}
-                >
-                    <ThorOhThorSections.Text>Looks like you're lost... click this to go back</ThorOhThorSections.Text>
-                </ThorOhThorSections.CanvasContainer>
-            </DefaultLayout>
-        );
-    }
+    return (
+        <>
+            <Head>
+                <title>This is not the page you're looking for...</title>
+                <meta name="keywords" content={'kye,smith,404'}/>
+            </Head>
+            <ThorOhThorSections.CanvasContainer
+                ref={canvasContainerRef}
+                onClick={() => window.location.href = '/'}
+            >
+                <ThorOhThorSections.Text>Looks like you're lost... click this to go back</ThorOhThorSections.Text>
+            </ThorOhThorSections.CanvasContainer>
+        </>
+    );
 }
 
-export default ThorOhThor;
+FourOFour.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>
+export default FourOFour;

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Swipe } from '@helpers/swipe';
+import React from 'react';
+import { Swipe } from 'helpers/swipe';
 import { CarouselCard } from './CarouselCard';
-import { debounce } from '@helpers/debounce';
-import * as FuzzyMaths from '@helpers/fuzzy-maths';
+import { debounce } from 'helpers/debounce';
+import * as FuzzyMaths from 'helpers/fuzzy-maths';
 
 interface CarouselState {
     cardWidth: number;

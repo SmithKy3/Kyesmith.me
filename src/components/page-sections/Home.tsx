@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { FancyContainer } from '@/src/components/FancyContainer';
-import { Carousel, CarouselProps } from '@/src/components/Carousel';
+import { FancyContainer } from 'components/FancyContainer';
+import { Carousel, CarouselProps } from 'components/Carousel';
 import { FileEarmarkPerson } from '@styled-icons/bootstrap'
-import { Github, Linkedin, Html5, Css3, Javascript, Typescript, Sass, ReactLogo, Redux, ReduxSaga, Webpack, Bigcommerce } from '@styled-icons/simple-icons';
-import myWorkCards from '@assets/my-work-cards.json';
+import { Github, Linkedin, Html5, Css3, Javascript, Typescript, Sass, ReactLogo, Redux, Reduxsaga, Webpack, Bigcommerce } from '@styled-icons/simple-icons';
+import myWorkCards from 'assets/my-work-cards.json';
 
 //------------------------------------------
 // Bio / intro components
@@ -96,7 +96,7 @@ const skillIcons = [
   Sass,
   ReactLogo,
   Redux,
-  ReduxSaga,
+  Reduxsaga,
   Webpack,
   Bigcommerce
 ];

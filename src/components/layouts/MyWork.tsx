@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { PageProps } from 'gatsby';
-import { Helmet } from 'react-helmet';
-import { Header } from '@/src/components/Header';
+import React from 'react';
+
+import { Header } from 'components/Header';
 import styled, { ThemeProvider } from 'styled-components';
-import theme from "@assets/styled-theme.json";
+import theme from "assets/styled-theme.json";
 import { ArrowLeftSquareFill } from '@styled-icons/bootstrap';
 
 const Main = styled.main`
@@ -99,33 +98,12 @@ const BackButton = styled.a`
     }
 `;
 
-type WorkPageProps = PageProps & {
-    pageContext: {
-        frontmatter: Record<string, string>;
-    }
-};
-
-const WorkPageLayout: React.FC<WorkPageProps> = (props) => {
-    const { frontmatter } = props.pageContext;
-
-    return (
-        <ThemeProvider theme={theme}>
-            <Helmet
-                htmlAttributes={{
-                    lang: 'en',
-                }}
-            >
-                <title>{frontmatter.title || 'KyeSmith.me - my work'}</title>
-                <meta name="description" content={frontmatter.description || ''}/>
-                <meta name="keywords" content={`${frontmatter.keywords},kye,smith` || 'kye,smith'}/>
-            </Helmet>
-            <Header />
-            <Main>
-                <BackButton id="back-button" href="/#my-work"><ArrowLeftSquareFill /></BackButton>
-                { props.children }
-            </Main>
-        </ThemeProvider>
-    );
-};
-
-export default WorkPageLayout;
+export const MyWorkLayout: React.FC<{}> = ({ children }) => (
+    <ThemeProvider theme={theme}>
+        <Header />
+        <Main>
+            <BackButton id="back-button" href="/#my-work"><ArrowLeftSquareFill /></BackButton>
+            {children}
+        </Main>
+    </ThemeProvider>
+);

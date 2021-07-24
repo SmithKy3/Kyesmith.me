@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { throttle } from '@helpers/throttle';
+import { throttle } from 'helpers/throttle';
 
 interface FanycyContainerProps {
     className?: string;

@@ -1,9 +1,4 @@
----
-title: KyeSmith.me
-description: Kye Smith's web dev portfolio site
-keywords: gatsby,mdx,portfolio, web developer
----
-
+import { MyWorkLayout } from 'components/layouts/MyWork';
 import { CodeSlash } from '@styled-icons/bootstrap';
 
 ## This very website
@@ -41,3 +36,5 @@ A few good examples of this are; the site-wide dark mode / theme switcher, the c
 with the reactive shadows on the homepage (they're much more interactive on a desktop) and also the debounce / throttle
 helper functions. Anyway, thanks for reading, feel free to connect with me on Linkedin, comments / questions are
 always welcome!
+
+export default ({ children }) => <MyWorkLayout>{children}</MyWorkLayout>

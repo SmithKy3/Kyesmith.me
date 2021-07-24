@@ -1,30 +1,29 @@
-import * as React from 'react';
-import { DefaultLayout } from '@layouts/default';
-import { Helmet } from 'react-helmet';
-import * as HomeSections from '@/src/components/page-sections/Home';
+import React from 'react';
+import { NextLayoutPage } from 'next';
+import Head from 'next/head';
 
-const Home: React.FC<{}> = () => {
+
+import { DefaultLayout } from 'components/layouts/Default';
+import * as HomeSections from 'components/page-sections/Home';
+
+const Home: NextLayoutPage = () => {
 
   return (
-    <DefaultLayout pageName="home">
-      <Helmet
-          htmlAttributes={{
-              lang: 'en',
-          }}
-      >
+    <>
+      <Head>
         <title>Kye Smith - Web Developer</title>
         <meta name="description" content="Kye Smith's Web Developer Portfolio" />
-        <meta name="keywords" content="kye,smith,web,developer,frontend,gatsby,react,mdx" />
-      </Helmet>
+        <meta name="keywords" content="kye,smith,web,developer,frontend,nextjs,react,mdx" />
+      </Head>
 
       <HomeSections.Bio />
 
       <HomeSections.SkillSetCarousel />
 
       <HomeSections.WorkCards />
-
-    </DefaultLayout>
+    </>
   );
 };
 
+Home.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>
 export default Home;
