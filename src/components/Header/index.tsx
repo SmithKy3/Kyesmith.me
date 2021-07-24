@@ -1,80 +1,80 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'next/link';
-import { HeaderLightningBolt, LightModeIcon, DarkModeIcon } from './icons';
-import * as DarkMode from 'helpers/dark-mode';
+import React, { useCallback, useEffect, useState } from "react";
+import styled from "styled-components";
+import Link from "next/link";
+import { HeaderLightningBolt, LightModeIcon, DarkModeIcon } from "./icons";
+import * as DarkMode from "helpers/dark-mode";
 
 interface HeaderState {
-    isDarkModeEnabled: boolean;
+  isDarkModeEnabled: boolean;
 }
 
 const HeaderContainer = styled.header`
-    display: block;
-    position: relative;
-    width: 100%;
-    height: max-content;
-    padding: 2rem 0;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: max-content;
+  padding: 2rem 0;
 `;
 
 const HeaderText = styled.h1`
-    display: block;
-    width: max-content;
-    margin: 0 auto 0 .5rem;
-    font-size: 32px;
-    font-weight: 500;
-    color: var(--color--main);
+  display: block;
+  width: max-content;
+  margin: 0 auto 0 0.5rem;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--color--main);
 
-    @media(min-width: ${props => props.theme.screenSizes.small}) {
-        margin: auto;
+  @media (min-width: ${(props) => props.theme.screenSizes.small}) {
+    margin: auto;
+  }
+
+  span {
+    color: var(--color--accent);
+    text-decoration: none;
+    transition: color 0.3s;
+    cursor: pointer;
+
+    svg {
+      fill: var(--color--accent);
     }
 
-    a {
-        color: var(--color--accent);
-        text-decoration: none;
-        transition: color .3s;
-        > svg {
-            fill: var(--color--accent);
-            transition: fill .3s;
-        }
-    }
+    &:hover {
+      color: var(--color--accentAlt);
 
-    a:hover {
-        color: var(--color--accentAlt);
-        > svg {
-            fill: var(--color--accentAlt);
-        }
+      svg {
+        fill: var(--color--accentAlt);
+      }
     }
+  }
 `;
 
-export class Header extends React.Component<{}, HeaderState> {
-    constructor(props: React.PropsWithChildren<{}>) {
-        super(props);
+export const Header: React.FC<{}> = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-        const isSSR = typeof window === 'undefined';
-        this.state = {
-            isDarkModeEnabled: !isSSR ? DarkMode.getState() : false,
-        };
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const initialDarkModeState = DarkMode.getState();
+      setIsDarkMode(initialDarkModeState);
+      DarkMode.applyDarkModeState(initialDarkModeState);
     }
+  }, [setIsDarkMode]);
 
-    handleThemeIconClick() {
-        const newDarkModeState = DarkMode.toggleState();
-        this.setState({
-            ...this.state,
-            isDarkModeEnabled: newDarkModeState,
-        });
-    }
+  const toggleDarkMode = useCallback(() => {
+    const newDarkModeState = DarkMode.toggleState();
+    setIsDarkMode(newDarkModeState);
+  }, []);
 
-    render() {
-        return (
-            <HeaderContainer>
-                <HeaderText>
-                    {/* <Link href="/">
-                        Kye Smith <HeaderLightningBolt />
-                    </Link> */}
-                </HeaderText>
-                <LightModeIcon isHidden={this.state.isDarkModeEnabled} onClick={() => this.handleThemeIconClick()} />
-                <DarkModeIcon isHidden={!this.state.isDarkModeEnabled} onClick={() => this.handleThemeIconClick()} />
-            </HeaderContainer>
-        );
-    }
-}
+  return (
+    <HeaderContainer>
+      <HeaderText>
+        <Link href="/">
+          <span>
+            Kye Smith <HeaderLightningBolt />
+          </span>
+        </Link>
+      </HeaderText>
+      <LightModeIcon isHidden={isDarkMode} onClick={toggleDarkMode} />
+      <DarkModeIcon isHidden={!isDarkMode} onClick={toggleDarkMode} />
+    </HeaderContainer>
+  );
+};
