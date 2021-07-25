@@ -1,5 +1,5 @@
-const LS_DARK_MODE_KEY = "KyeSmith.me-darkModeEnabled";
-const DARK_MODE_CLASS = "dark";
+const LS_DARK_MODE_KEY = 'KyeSmith.me-darkModeEnabled';
+const DARK_MODE_CLASS = 'dark';
 
 export function init() {
   const darkModeState = getState();

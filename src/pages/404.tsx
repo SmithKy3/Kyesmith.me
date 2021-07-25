@@ -1,17 +1,29 @@
-import React, { createRef, useEffect, useRef } from "react";
-import { NextLayoutPage } from "next";
-import Head from "next/head";
-import { getWarpSpeedController, WarpSpeedController } from "warpspeed";
+import React, { createRef, useEffect, useRef } from 'react';
+import { NextLayoutPage } from 'next';
+import Head from 'next/head';
+import styled from 'styled-components';
+import { getWarpSpeedController, WarpSpeedController } from 'warpspeed';
 
-import { DefaultLayout } from "components/layouts/Default";
-import * as ThorOhThorSections from "components/page-sections/ThorOhThor";
+import { DefaultLayout } from 'components/layouts/Default';
+import {
+  canvasContainerStyles,
+  canvasTextStyles,
+} from 'assets/css-in-js/pages/404';
+
+const CanvasContainer = styled.div`
+  ${canvasContainerStyles}
+`;
+
+const CanvasText = styled.p`
+  ${canvasTextStyles}
+`;
 
 const FourOFour: NextLayoutPage = () => {
   const canvasContainerRef = createRef<HTMLDivElement>();
   const warpspeedController = useRef<WarpSpeedController>();
 
   useEffect(() => {
-    if (canvasContainerRef.current && typeof window != "undefined") {
+    if (canvasContainerRef.current && typeof window != 'undefined') {
       warpspeedController.current = getWarpSpeedController();
       warpspeedController.current.mountCanvasTo(canvasContainerRef.current);
       warpspeedController.current.render();
@@ -24,16 +36,14 @@ const FourOFour: NextLayoutPage = () => {
     <>
       <Head>
         <title>This is not the page you're looking for...</title>
-        <meta name="keywords" content={"kye,smith,404"} />
+        <meta name="keywords" content={'kye,smith,404'} />
       </Head>
-      <ThorOhThorSections.CanvasContainer
+      <CanvasContainer
         ref={canvasContainerRef}
-        onClick={() => (window.location.href = "/")}
+        onClick={() => (window.location.href = '/')}
       >
-        <ThorOhThorSections.Text>
-          Looks like you're lost... click this to go back
-        </ThorOhThorSections.Text>
-      </ThorOhThorSections.CanvasContainer>
+        <CanvasText>Looks like you're lost... click this to go back</CanvasText>
+      </CanvasContainer>
     </>
   );
 };

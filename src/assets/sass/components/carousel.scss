@@ -1,0 +1,137 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: max-content;
+  margin: 0 auto;
+  padding: 1rem 10%;
+}
+
+.carousel-control {
+  // Actual button is empty and is 100% padding to create a perfect circle that's responsive
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 0;
+  padding-bottom: 10%;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  --carouselBackgroundColor: var(--color--background);
+  --carouselArrowColor: var(--color--main);
+
+  @include breakpoint('large') {
+    width: 7.5%;
+    padding-bottom: 7.5%;
+  }
+
+  &:hover {
+    --carouselBackgroundColor: var(--color--main);
+    --carouselArrowColor: var(--color--background);
+  }
+
+  // Colored background of circle
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background: var(--carouselBackgroundColor);
+    border-radius: inherit;
+    box-shadow: 0px 0px 10px 1px var(--color--main);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  // Next / Prev arrow triangle
+  &::after {
+    $width: calc(100%);
+    content: '';
+    position: absolute;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    background-size: 75% 50%;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s;
+  }
+
+  &-prev {
+    left: -10%;
+
+    &::after {
+      left: 12.5%;
+      background-image: linear-gradient(
+          to top right,
+          transparent 50%,
+          var(--carouselArrowColor) 50%
+        ),
+        linear-gradient(
+          to bottom right,
+          transparent 50%,
+          var(--carouselArrowColor) 50%
+        );
+      background-position: bottom right, top right;
+    }
+
+    &:hover {
+      background-image: linear-gradient(
+          to top right,
+          transparent 50%,
+          var(--carouselArrowColor) 50%
+        ),
+        linear-gradient(
+          to bottom right,
+          transparent 50%,
+          var(--carouselArrowColor) 50%
+        );
+    }
+  }
+
+  &-next {
+    right: -10%;
+
+    &::after {
+      right: 12.5%;
+      background-image: linear-gradient(
+          to top left,
+          transparent 50%,
+          var(--carouselArrowColor) 50%
+        ),
+        linear-gradient(
+          to bottom left,
+          transparent 50%,
+          var(--carouselArrowColor) 50%
+        );
+      background-position: bottom left, top left;
+    }
+  }
+}
+
+.carousel-track-container {
+  width: 100%;
+  height: max-content;
+  overflow-x: hidden;
+}
+
+.carousel-track {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transition: left 0.3s;
+}
+
+.carousel-card-container {
+  flex: 0 0 auto;
+  height: max-content;
+  padding: 0 10%;
+}

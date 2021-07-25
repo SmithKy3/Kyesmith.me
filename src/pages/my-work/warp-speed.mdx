@@ -1,12 +1,13 @@
----
-title: Warp-Speed
-description: A star-wars-style warp speed effect by Kye Smith
-keywords: npm,html5,canvas,typescript
----
-
+import { MyWorkMeta, MyWorkLayout } from 'components/layouts/MyWork';
 import { CodeSlash } from '@styled-icons/bootstrap';
 import { Npm } from '@styled-icons/simple-icons';
-import { WarpSpeedCanvas } from '@components/WarpSpeedCanvas';
+import { WarpSpeedCanvas } from 'components/common/WarpSpeedCanvas';
+
+<MyWorkMeta
+  title="KyeSmith.me - WarpSpeed"
+  description="Kye Smith's star-wars-style warp speed effect generator"
+  keywords={['kye', 'smith', 'warpspeed', 'npm', 'typescript']}
+/>
 
 ## Warp-Speed
 
@@ -36,8 +37,8 @@ introduce me to publishing to NPM and to provide me with a break from my
 
 I was working through a lot of Vector algebra with HTML5 canvas animations and was figuring out
 how best to give the feel of depth on a screen / web page. I decided I could probably remake the star wars
-acceleration to hyperspace animation pretty easily. So, I knocked this out over the course of a day or so.
-It’s since had a couple of minor upgrades but the overarching algorithm is much the same.
+acceleration to hyperspace animation pretty easily. So, I had a gaaod think and managed to produce this.
+It’s since had a couple of minor upgrades but the base algorithm is much the same.
 
 For each "star", I'm doing the following:
 
@@ -52,4 +53,7 @@ For each "star", I'm doing the following:
 As Z moves approaches zero, the aforementioned coefficient (MAX_Z / Z) approaches infinity, meaning X and Y increase
 and move towards the edge of the screen.
 
-Then, once Z goes below zero, I "recycle" the star and give it regenerated coordinates.
+Then, once Z goes below zero, I "recycle" the star and reset it's coordinates, just to avoid continuously creating
+new objects and leaving a load of memory waiting to be cleaned up.
+
+export default ({ children }) => <MyWorkLayout>{children}</MyWorkLayout>;

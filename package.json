@@ -11,10 +11,11 @@
     "kye smith"
   ],
   "scripts": {
+    "build": "yarn clean && next build && next export",
+    "clean": "rm -rf ./.next && rm -rf ./out",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "deploy": "gatsby clean && gatsby build && push-dir --dir=public --branch=gh-pages --cleanup"
+    "deploy": "yarn build && push-dir --dir=out --branch=gh-pages --cleanup",
+    "start": "next start"
   },
   "license": "MIT",
   "devDependencies": {

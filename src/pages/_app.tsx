@@ -1,7 +1,7 @@
-import "../assets/styles/index.scss";
+import '../assets/sass/index.scss';
 
-import React, { ReactNode } from "react";
-import { AppProps } from "next/app";
+import React, { ReactNode } from 'react';
+import { AppProps } from 'next/app';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout || ((page: ReactNode) => page);

@@ -1,10 +1,11 @@
----
-title: UoS EEE Society Logo
-description: Sheffield University's new EEE society logo
-keywords: sheffield,eee,photoshop
----
+import { MyWorkMeta, MyWorkLayout } from 'components/layouts/MyWork';
+import { EasyImage } from 'components/common/EasyImage';
 
-import { EasyImage } from '@components/EasyImage';
+<MyWorkMeta
+  title="KyeSmith.me - UoS EEE Society Logo"
+  description="Kye Smith's designing of Sheffield University's new EEE society logo"
+  keywords={['kye', 'smith', 'sheffield']}
+/>
 
 ## University of Sheffield's Electronic and Electrical Engineering Society Logo
 
@@ -31,3 +32,5 @@ The final design after working with the University design team
   imgFileName="eee-logo-final.png"
   style={{ width: '80%', margin: '.5rem auto' }}
 />
+
+export default ({ children }) => <MyWorkLayout>{children}</MyWorkLayout>;

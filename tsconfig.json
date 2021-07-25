@@ -2,9 +2,7 @@
   "compilerOptions": {
     "target": "ES2015",
     "module": "esnext",
-    "lib": [
-      "dom"
-    ],
+    "lib": ["dom"],
     "resolveJsonModule": true,
     "jsx": "preserve",
     "strict": true,
@@ -17,12 +15,6 @@
     "isolatedModules": true,
     "baseUrl": "./src"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
