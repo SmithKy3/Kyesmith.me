@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 
-export const StyledImage = styled(Image)`
+export const StyledImage = styled.img`
   width: 100%;
   height: auto;
   margin: 0 auto;
