@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { Lightning, SunFill, MoonFill } from '@styled-icons/bootstrap';
 
-import * as DarkMode from 'helpers/darkMode';
-
+import { useDarkMode } from 'hooks/useDarkMode';
 import {
   containerStyles,
   h1Styles,
@@ -34,20 +33,7 @@ export const MoonIconStyles = styled(MoonFill)<{ isHidden: boolean }>`
 `;
 
 export const Header: React.FC<{}> = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      const initialDarkModeState = DarkMode.getState();
-      setIsDarkMode(initialDarkModeState);
-      DarkMode.applyDarkModeState(initialDarkModeState);
-    }
-  }, [setIsDarkMode]);
-
-  const toggleDarkMode = useCallback(() => {
-    const newDarkModeState = DarkMode.toggleState();
-    setIsDarkMode(newDarkModeState);
-  }, []);
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <HeaderContainer>
