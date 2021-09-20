@@ -18,8 +18,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           rel="stylesheet"
         />
       </Head>
-      <ClipPaths />
       <Component {...pageProps} />
+      <ClipPaths />
     </>
   );
 };

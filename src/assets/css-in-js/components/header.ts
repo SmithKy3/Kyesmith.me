@@ -39,26 +39,42 @@ export const h1Styles = css`
 
   span {
     display: block;
-    text-decoration: none;
-    transition: color 0.3s;
+    padding: 0 5px;
     cursor: pointer;
     color: var(--color--background);
-    border-width: 2px 0 0 2px;
-    border-style: solid;
-    border-color: transparent;
-    box-shadow: none;
-    transform: translate(0, 0);
-    transition: 0.3s border-color, 0.3s box-shadow, 0.3s transform;
+    transition: color 0.5s;
 
     > svg {
       fill: var(--color--background);
-      transition: color 0.3s;
+      transition: fill 0.5s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 10px;
+      background: var(--color--background);
+      transition: all 0.5s;
+      z-index: -1;
     }
 
     &:hover {
-      border-color: var(--color--background);
-      box-shadow: 4px 4px 4px 1px var(--color--main);
-      transform: translate(2px, 2px);
+      color: var(--color--main);
+
+      > svg {
+        fill: var(--color--main);
+      }
+
+      &::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 `;
