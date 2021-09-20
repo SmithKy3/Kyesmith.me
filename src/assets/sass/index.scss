@@ -28,7 +28,7 @@ body {
   &:not(.dark) {
     --color--background: #{$white};
     --color--main: #{$black};
-    --color--accent: #{$meadow};
+    --color--accent: #{$orange};
   }
 
   &.dark {
