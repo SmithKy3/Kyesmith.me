@@ -3,14 +3,14 @@ import { useCallback, useEffect, useState } from 'react';
 const DARK_MODE_KEY = 'KyeSmith.me-darkModeEnabled';
 const DARK_MODE_CLASS = 'dark';
 
-function getDarkModeState() {
+function getLocalStorageDarkMode() {
   if (!window.localStorage) return false;
 
   const storedDarkModeState = window.localStorage.getItem(DARK_MODE_KEY);
   return storedDarkModeState ? JSON.parse(storedDarkModeState) : false;
 }
 
-function setDarkModeState(newDarkModeState: boolean): void {
+function setLocalStorageDarkMode(newDarkModeState: boolean): void {
   if (!window.localStorage) return;
   window.localStorage.setItem(DARK_MODE_KEY, JSON.stringify(newDarkModeState));
   applyDarkModeState(newDarkModeState);
@@ -29,17 +29,19 @@ export const useDarkMode = () => {
 
   useEffect(() => {
     if (typeof window !== undefined) {
-      const initialDarkModeState = getDarkModeState();
+      const initialDarkModeState = getLocalStorageDarkMode();
       setIsDarkMode(initialDarkModeState);
       applyDarkModeState(initialDarkModeState);
     }
   }, [setIsDarkMode]);
 
   const toggleDarkMode = useCallback(() => {
+    console.log(isDarkMode);
     const newDarkModeState = !isDarkMode;
     applyDarkModeState(newDarkModeState);
-    setDarkModeState(newDarkModeState);
-  }, [setIsDarkMode]);
+    setLocalStorageDarkMode(newDarkModeState);
+    setIsDarkMode(newDarkModeState);
+  }, [isDarkMode, setIsDarkMode]);
 
   return {
     isDarkMode,

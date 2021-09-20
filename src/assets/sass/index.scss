@@ -9,6 +9,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: inherit;
 }
 
 html,
@@ -49,20 +51,4 @@ button {
 
 svg {
   transition: fill 0.3s;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-}
-
-h2,
-h3,
-h4 h5,
-h6 {
-  font-family: 'Prompt', sans-serif;
-}
-
-p,
-ul {
-  font-family: 'Open Sans', sans-serif;
 }

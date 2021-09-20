@@ -3,14 +3,13 @@
     "white": "#F4F5F6",
     "black": "#071E22",
     "blue": "#4464AD",
-    "red": "#DB162F",
+    "red": "#E01A4F",
     "marigold": "#ECA400",
-    "meadow": "#00BD9D"
+    "meadow": "#00BD9D",
+    "orange": "#EE964B"
   },
   "fonts": {
-    "openSans": "'Open Sans', sans-serif",
-    "prompt": "'Prompt', sans-serif",
-    "playfairDisplay": "'Playfair Display', serif"
+    "poppins": "'Poppins', sans-serif"
   },
   "screenSizes": {
     "small": "550px",

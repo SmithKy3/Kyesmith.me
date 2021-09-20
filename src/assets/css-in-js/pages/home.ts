@@ -14,7 +14,6 @@ export const bioContainerStyles = css`
     margin: 0 auto 1rem;
     color: var(--color--main);
     font-size: 20px;
-    font-family: ${(props) => props.theme.fonts.openSans};
 
     &:last-of-type {
       margin: 0 auto;

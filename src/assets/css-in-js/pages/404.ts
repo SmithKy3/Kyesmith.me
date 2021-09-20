@@ -25,6 +25,5 @@ export const canvasTextStyles = css`
   width: 100%;
   color: ${(props) => props.theme.colors.white};
   text-align: center;
-  font-family: ${(props) => props.theme.fonts.playfairDisplay};
   font-size: 40px;
 `;
