@@ -31,6 +31,17 @@ export const ClipPaths: React.FC<{}> = () => (
             Z"
         />
       </clipPath>
+
+      <clipPath id="blob" clipPathUnits="objectBoundingBox">
+        <path
+          d="M 0.4,0
+            C 0.55,0 1,0.22 1,0.5
+            S 0.91,1 0.5,1
+            C 0.27,1 0.05,0.77 0.1,0.5
+            S 0.3,0 0.4,0
+            Z"
+        />
+      </clipPath>
     </defs>
   </svg>
 );
