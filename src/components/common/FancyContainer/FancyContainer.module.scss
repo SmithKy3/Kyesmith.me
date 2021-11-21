@@ -1,15 +1,13 @@
-import { css } from 'styled-components';
-
-export const containerStyles = css`
+.container {
   position: relative;
   width: 0;
   height: 0;
   margin: 0;
   background-color: var(--color--background);
   border: 2px solid var(--color--main);
-`;
+}
 
-export const shadowStyles = css`
+.shadow {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -21,4 +19,4 @@ export const shadowStyles = css`
   opacity: 0.25;
   will-change: transform;
   transition: transform 0.3s;
-`;
+}

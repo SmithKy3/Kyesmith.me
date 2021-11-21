@@ -1,30 +1,31 @@
-import { css } from 'styled-components';
+@import 'settings.tools';
+@import 'settings.variables';
 
-export const containerStyles = css`
+.container {
   display: block;
   position: relative;
   width: 100%;
   height: 25vh;
   clip-path: url('#mobileHeaderBackgroundPath');
-  background: ${(props) =>
-    `linear-gradient(
-        170deg,
-        ${props.theme.colors.red} 15%,
-        ${props.theme.colors.orange} 30%,
-        var(--color--background) 60%)`};
+  background: linear-gradient(
+    170deg,
+    $red 15%,
+    $orange 30%,
+    var(--color--background) 60%
+  );
 
-  @media (min-width: ${(props) => props.theme.screenSizes.medium}) {
+  @include breakpoint('medium') {
     clip-path: url('#desktopHeaderBackgroundPath');
-    background: ${(props) =>
-      `linear-gradient(
-        90deg,
-        ${props.theme.colors.red} 0%,
-        ${props.theme.colors.orange} 50%,
-        var(--color--background) 100%)`};
+    background: linear-gradient(
+      90deg,
+      $red 0%,
+      $orange 50%,
+      var(--color--background) 100%
+    );
   }
-`;
+}
 
-export const h1Styles = css`
+.mainHeading {
   display: block;
   position: absolute;
   top: 2vh;
@@ -33,7 +34,7 @@ export const h1Styles = css`
   font-size: 32px;
   font-weight: 400;
 
-  @media (min-width: ${(props) => props.theme.screenSizes.small}) {
+  @include breakpoint('small') {
     margin: auto;
   }
 
@@ -77,43 +78,38 @@ export const h1Styles = css`
       }
     }
   }
-`;
+}
 
-export const lightningIconStyles = css`
+.lightningIcon {
   display: inline-block;
   width: 32px;
   height: 32px;
-`;
+}
 
-const darkModeToggleIconStyles = css<{ isHidden: boolean }>`
+.themeToggleIcon {
   position: absolute;
   width: 30px;
   height: 30px;
-  transform: ${(props) => (props.isHidden ? 'none' : 'translateY(-50%)')};
   fill: var(--color--main);
   cursor: pointer;
-`;
+}
 
-export const sunIconStyles = css`
-  ${darkModeToggleIconStyles}
-  top: ${(props) => (props.isHidden ? '2vh' : '-50vh')};
+.themeToggleIconDark {
   right: 2vh;
   transition: top 0.5s cubic-bezier(0, 0.75, 1, 1), fill 0.5s;
 
   &:hover,
   &:active {
-    fill: ${(props) => props.theme.colors.marigold};
+    fill: $marigold;
   }
-`;
+}
 
-export const moonIconStyles = css`
-  ${darkModeToggleIconStyles}
+.themeToggleIconLight {
   top: 2vh;
-  right: ${(props) => (props.isHidden ? '2vh' : '-50vh')};
   transition: right 0.5s cubic-bezier(0, 0.75, 1, 1), fill 0.5s;
 
   &:hover,
   &:active {
-    fill: ${(props) => props.theme.colors.blue};
+    fill: $blue;
   }
-`;
+}

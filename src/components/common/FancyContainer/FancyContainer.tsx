@@ -1,11 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { throttle } from 'helpers/throttle';
-import {
-  containerStyles,
-  shadowStyles,
-} from 'assets/css-in-js/components/fancyContainer';
+
+import styles from './FancyContainer.module.scss';
 
 interface FanycyContainerProps {
   className?: string;
@@ -13,14 +10,6 @@ interface FanycyContainerProps {
 interface FancyContainerState {
   shadowStyles: React.CSSProperties;
 }
-
-const Container = styled.div`
-  ${containerStyles}
-`;
-
-const Shadow = styled.div`
-  ${shadowStyles}
-`;
 
 export class FancyContainer extends React.Component<
   FanycyContainerProps,
@@ -79,10 +68,14 @@ export class FancyContainer extends React.Component<
 
   public render() {
     return (
-      <Container className={this.props.className}>
-        <Shadow style={this.state.shadowStyles} ref={this.shadowRef} />
+      <div className={`${this.props.className} ${styles.container}`}>
+        <div
+          className={styles.shadow}
+          style={this.state.shadowStyles}
+          ref={this.shadowRef}
+        />
         {this.props.children}
-      </Container>
+      </div>
     );
   }
 }

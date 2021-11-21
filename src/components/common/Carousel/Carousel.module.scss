@@ -52,7 +52,6 @@
 
   // Next / Prev arrow triangle
   &::after {
-    $width: calc(100%);
     content: '';
     position: absolute;
     top: 25%;

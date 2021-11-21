@@ -1,32 +1,7 @@
 import React, { createRef, useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import { getWarpSpeedController, WarpSpeedController } from 'warpspeed';
 
-const CanvasContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  margin: 2rem auto;
-
-  #warpSpeedCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-`;
-
-const ChildrenLayer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-`;
+import styles from './WarpSpeedCanvas.module.scss';
 
 export const WarpSpeedCanvas: React.FC<{}> = ({ children }) => {
   const canvasContainerRef = createRef<HTMLDivElement>();
@@ -43,8 +18,8 @@ export const WarpSpeedCanvas: React.FC<{}> = ({ children }) => {
   }, [warpspeedController, canvasContainerRef]);
 
   return (
-    <CanvasContainer ref={canvasContainerRef}>
-      <ChildrenLayer>{children}</ChildrenLayer>
-    </CanvasContainer>
+    <div className={styles.container} ref={canvasContainerRef}>
+      <div className={styles.overlay}>{children}</div>
+    </div>
   );
 };
