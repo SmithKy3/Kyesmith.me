@@ -90,26 +90,27 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  fill: var(--color--main);
   cursor: pointer;
 }
 
 .themeToggleIconDark {
   right: 2vh;
   transition: top 0.5s cubic-bezier(0, 0.75, 1, 1), fill 0.5s;
+  fill: $marigold;
 
   &:hover,
   &:active {
-    fill: $marigold;
+    fill: var(--color--main);
   }
 }
 
 .themeToggleIconLight {
   top: 2vh;
   transition: right 0.5s cubic-bezier(0, 0.75, 1, 1), fill 0.5s;
+  fill: $blue;
 
   &:hover,
   &:active {
-    fill: $blue;
+    fill: var(--color--main);
   }
 }
