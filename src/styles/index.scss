@@ -1,9 +1,6 @@
 // Common Imports
-@import './common/variables.scss';
-@import './common/tools.scss';
-
-// Component Imports
-@import './components/carousel.scss';
+@import './settings.variables.scss';
+@import './settings.tools.scss';
 
 * {
   margin: 0;

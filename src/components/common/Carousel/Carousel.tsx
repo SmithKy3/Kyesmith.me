@@ -4,6 +4,8 @@ import { CarouselCard } from './CarouselCard';
 import { debounce } from 'helpers/debounce';
 import * as FuzzyMaths from 'helpers/fuzzyMaths';
 
+import styles from './Carousel.module.scss';
+
 interface CarouselState {
   cardWidth: number;
   cardPadding: number;
@@ -166,16 +168,19 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
     );
 
     return (
-      <section className="carousel" id={this.props.name}>
+      <section className={styles.carousel} id={this.props.name}>
         <button
-          className="carousel-control carousel-control-prev"
+          className={`${styles.carouselControl} ${styles.carouselControlPrev}`}
           onClick={() => this.handleControlClick('right')}
           name="My Skills Carousel - Previous"
         ></button>
 
-        <div className="carousel-track-container" ref={this.visibleTrackRef}>
+        <div
+          className={styles.carouselTrackContainer}
+          ref={this.visibleTrackRef}
+        >
           <div
-            className="carousel-track"
+            className={styles.carouselTrack}
             style={{ left: `${this.state.trackPosition}px` }}
             ref={this.fullTrackRef}
           >
@@ -184,7 +189,7 @@ export class Carousel extends React.Component<CarouselProps, CarouselState> {
         </div>
 
         <button
-          className="carousel-control carousel-control-next"
+          className={`${styles.carouselControl} ${styles.carouselControlNext}`}
           onClick={() => this.handleControlClick('left')}
           name="My Skills Carousel - Next"
         ></button>

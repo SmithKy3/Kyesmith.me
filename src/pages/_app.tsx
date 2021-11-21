@@ -2,8 +2,9 @@ import React, { ReactNode } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import '../assets/sass/index.scss';
 import { ClipPaths } from 'components/common/ClipPaths';
+
+import '../styles/index.scss';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const getLayout = Component.getLayout || ((page: ReactNode) => page);
