@@ -107,29 +107,20 @@ const Home: NextLayoutPage = () => {
           SaaS startup. Also likes to play with Rubik's cubes.
         </p>
         <p>
-          You can find my CV{' '}
-          <a href="/CV.pdf" target="_blank">
-            here <FileEarmarkPerson />
-          </a>
-          ,
-        </p>
-        <p>
-          {' '}
-          my Github{' '}
+          You can find me on{' '}
           <a href="https://github.com/SmithKy3" target="_blank">
-            here <Github />
-          </a>
-          ,
-        </p>
-        <p>
-          and my LinkedIn{' '}
+            Github <Github />
+          </a>{' '}
+          and{' '}
           <a
             href="https://uk.linkedin.com/in/kye-smith-121429165"
             target="_blank"
           >
-            here <Linkedin />
+            LinkedIn <Linkedin />
           </a>
+          .
         </p>
+        <p></p>
       </BioContainer>
 
       <CarouselContainer>
