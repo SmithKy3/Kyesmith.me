@@ -1,3 +1,5 @@
+@import '@/styles/settings.tools';
+
 .cardWrapper {
   width: 100%;
   min-height: 250px;
@@ -26,6 +28,10 @@
   font-size: 14px;
   margin-bottom: 10px;
   color: var(--color--secondary);
+
+  @include breakpoint('medium') {
+    font-size: 20px;
+  }
 }
 
 .tab {
