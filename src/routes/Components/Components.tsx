@@ -50,7 +50,7 @@ export const Components: React.FC = () => {
         />
         <LegacyComponentCard
           componentCode={NoisyDonutCanvasRaw}
-          componentCodeLink="https://github.com/SmithKy3/Kyesmith.me/tree/master/src/components/NoisyDonutCanvas/NoisyDonutCanvas"
+          componentCodeLink="https://github.com/SmithKy3/Kyesmith.me/tree/master/src/components/NoisyDonutCanvas/NoisyDonutCanvas.tsx"
           componentDemo={
             <div className={styles.canvasDemoWrapper}>
               <button
