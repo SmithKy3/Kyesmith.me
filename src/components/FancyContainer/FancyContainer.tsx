@@ -27,18 +27,14 @@ export class FancyContainer extends React.Component<
   }
 
   public componentDidMount() {
-    window.addEventListener('mousemove', (event) =>
-      this.updateShadowPosition(event)
-    );
+    window.addEventListener('mousemove', this.updateShadowPosition);
   }
 
   public componentWillUnmount() {
-    window.removeEventListener('mousemove', (event) =>
-      this.updateShadowPosition(event)
-    );
+    window.removeEventListener('mousemove', this.updateShadowPosition);
   }
 
-  private _updateShadowPosition(event: MouseEvent): void {
+  private _updateShadowPosition = (event: MouseEvent): void => {
     let x = 0;
     let y = 0;
 
@@ -64,7 +60,7 @@ export class FancyContainer extends React.Component<
       transform: `translate3d(${x}px, ${y}px, 0px)`,
     };
     this.setState({ ...this.state, shadowStyles });
-  }
+  };
   private updateShadowPosition = throttle(this._updateShadowPosition, 100);
 
   public render() {
