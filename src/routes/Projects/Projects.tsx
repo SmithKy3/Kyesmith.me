@@ -63,7 +63,12 @@ export const Projects: React.FC = () => (
             canvas and vector mathematics a lot at Wren kitchens and naively
             thought it wouldn't be too hard to write a little interactive web
             app that simulates something that resembles gravity. I was very
-            wrong but I've got some plans for updates in the future.
+            wrong but I've got some plans for updates in the future. You can
+            view it{' '}
+            <BlockLink openInNewTab href="https://space-thing.vercel.app/">
+              here
+            </BlockLink>
+            .
           </p>
         }
       />
