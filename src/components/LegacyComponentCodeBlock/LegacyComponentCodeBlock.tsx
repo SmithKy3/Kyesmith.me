@@ -13,6 +13,7 @@ export interface LegacyComponentCodeBlockProps {
 
 const syntaxHighlighterCustomStyles: React.CSSProperties = {
   background: 'transparent',
+  fontSize: '12px',
 };
 
 export const LegacyComponentCodeBlock: React.FC<
