@@ -6,19 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Install
         run: yarn install
-
       - name: Build
         run: yarn build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.2.2
+      - name: Upload build files as github pages artifact
+        uses: actions/upload-pages-artifact@v1.0.3
         with:
-          branch: gh-pages
-          folder: dist
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy build artifact to github-pages environment
+        uses: actions/deploy-pages@v1.0.8
