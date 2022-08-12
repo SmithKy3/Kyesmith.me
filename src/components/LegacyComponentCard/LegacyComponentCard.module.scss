@@ -64,9 +64,10 @@
 
 .description {
   position: relative;
-  font-size: 16px;
   margin-bottom: 20px;
   padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
 
   &::after {
     content: '';
