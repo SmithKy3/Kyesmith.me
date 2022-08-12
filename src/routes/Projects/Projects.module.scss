@@ -1,0 +1,73 @@
+@import '@/styles/settings.sizes';
+@import '@/styles/settings.tools';
+
+.heading {
+  width: max-content;
+  margin: 0 auto 10px;
+  font-size: 32px;
+  color: var(--color--secondary);
+}
+
+.description {
+  width: max-content;
+  max-width: 60%;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--color--secondary);
+}
+
+.projectCardsWrapper {
+  width: 80%;
+  margin: 40px auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+
+  @include breakpoint('medium') {
+    width: 60%;
+    display: block;
+    flex-flow: unset;
+    justify-content: unset;
+    align-items: unset;
+    column-count: 2;
+    column-gap: 20px;
+  }
+
+  @include breakpoint('large') {
+    column-count: 3;
+  }
+}
+
+.projectCard {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 0 0 0 20px;
+
+  @include breakpoint('medium') {
+    break-inside: avoid;
+  }
+}
+
+.projectCardImage {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.projectCardHeading {
+  font-size: 20px;
+  color: var(--color--secondary);
+  margin-bottom: 10px;
+}
+
+.projectCardBody {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color--secondary);
+
+  * {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+}

@@ -1,0 +1,33 @@
+@import '@/styles/settings.colors';
+@import '@/styles/settings.sizes';
+
+.canvas {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  width: 100vw;
+  height: $content-height;
+}
+
+.textWrapper {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: $white;
+  font-size: 30px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.text404 {
+  font-weight: 800;
+}

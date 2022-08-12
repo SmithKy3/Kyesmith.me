@@ -1,0 +1,15 @@
+@import '@/styles/settings.colors';
+
+:export {
+  lightColorZero: $darkGrey;
+  lightColorOne: $yellow;
+  lightColorTwo: $lightGreen;
+  lightColorThree: $darkGrey;
+  lightColorFour: $lightGreen;
+
+  darkColorZero: $darkGrey;
+  darkColorOne: $red;
+  darkColorTwo: $lightGreen;
+  darkColorThree: $darkGrey;
+  darkColorFour: $black;
+}

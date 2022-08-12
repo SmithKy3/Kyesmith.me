@@ -1,0 +1,19 @@
+@import '@/styles/settings.sizes';
+
+.contentWrapper {
+  width: 100vw;
+  height: calc(100vh - $footer-height);
+}
+
+.contentHeaderSpacer {
+  width: 100vw;
+  height: $header-height;
+}
+
+.content {
+  position: relative;
+  width: 100vw;
+  height: $content-height;
+  overflow-y: scroll;
+  padding-top: 20px;
+}

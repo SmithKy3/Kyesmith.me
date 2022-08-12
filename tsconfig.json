@@ -1,20 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "esnext",
-    "lib": ["dom"],
-    "resolveJsonModule": true,
-    "jsx": "preserve",
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "baseUrl": ".",
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
     "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": "./src"
+    "noEmit": true,
+    "jsx": "react",
+    "importsNotUsedAsValues": "error",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["./src"]
 }

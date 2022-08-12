@@ -1,0 +1,44 @@
+@import '@/styles/settings.colors';
+@import '@/styles/settings.sizes';
+@import '@/styles/settings.tools';
+
+.wrapper {
+  width: 100vw;
+  height: $footer-height;
+  background: var(--color--primary);
+}
+
+.iconsWrapper {
+  width: 30%;
+  height: 100%;
+  margin-right: auto;
+  padding-left: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint('medium') {
+    width: 20%;
+    padding-left: 0;
+    justify-content: space-evenly;
+  }
+
+  > a {
+    height: 32px;
+    font-size: 32px;
+    color: var(--color--secondary);
+  }
+}
+
+.githubIcon {
+  &:hover {
+    color: var(--color--accentAlt);
+  }
+}
+
+.linkedinIcon {
+  &:hover {
+    color: $linkedin-blue;
+  }
+}

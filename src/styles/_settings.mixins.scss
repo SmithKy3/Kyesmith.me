@@ -1,0 +1,8 @@
+@mixin frostedGlassBackground {
+  background: linear-gradient(
+    135deg var(--color--glass),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 5px 5px var(--color--tertiary);
+}

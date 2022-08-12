@@ -1,0 +1,87 @@
+@import '@/styles/settings.colors';
+@import '@/styles/settings.mixins';
+@import '@/styles/settings.sizes';
+@import '@/styles/settings.tools';
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - #{$footer-height});
+  z-index: -1;
+}
+
+.heading {
+  width: max-content;
+  max-width: 80%;
+  margin: 0 auto 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 40px;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.rubiks {
+  width: 50px;
+  margin: 0 0 0 20px;
+}
+
+.subheading {
+  width: max-content;
+  max-width: 60%;
+  margin: 0 auto;
+  font-size: 20px;
+  color: $white;
+}
+
+.aboutWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.aboutCard {
+  max-width: 60%;
+  height: max-content;
+  padding: 30px 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 20px 0;
+  @include frostedGlassBackground;
+
+  &:nth-last-child(n + 2) {
+    margin-bottom: 20px;
+  }
+
+  > p {
+    color: $white;
+    font-size: 20px;
+  }
+
+  @include breakpoint('medium') {
+    max-width: 33%;
+
+    &:nth-child(1) {
+      transform: translateX(-50%);
+    }
+
+    &:nth-child(3) {
+      transform: translateX(50%);
+    }
+  }
+}
+
+.m3terLink {
+  &:hover {
+    color: $m3ter-green;
+  }
+}
