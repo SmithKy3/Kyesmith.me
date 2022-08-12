@@ -1,3 +1,4 @@
+@import '@/styles/settings.sizes';
 @import '@/styles/settings.tools';
 
 .wrapper {
@@ -27,10 +28,10 @@
 }
 .spinner {
   position: absolute;
-  top: 50%;
-  left: 35vw;
-  width: 30vw;
-  height: 30vw;
+  top: calc(50% - #{$header-height});
+  left: 27vw;
+  width: 46vw;
+  height: 46vw;
   border-width: 15px;
   border-style: solid;
   border-color: var(--color--primary) var(--color--accent);
