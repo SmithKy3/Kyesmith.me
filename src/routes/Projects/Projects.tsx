@@ -80,9 +80,9 @@ export const Projects: React.FC = () => (
             When I was building "SpaceThing", I decided to build a little
             spin-off package that can be used to get the warp-speed effect from
             star wars, again using HTML5 canvas. You can view a demo by going to
-            any route that doesn't exist on this{' '}
-            <BlockLink href="/not/a/real/page">site</BlockLink> and you can find
-            the package up on{' '}
+            any route that doesn't exist on{' '}
+            <BlockLink href="/not/a/real/page">this site</BlockLink> and you can
+            find the package up on{' '}
             <BlockLink
               openInNewTab
               href="https://www.npmjs.com/package/warpspeed"
