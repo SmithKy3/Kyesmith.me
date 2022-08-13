@@ -16,7 +16,17 @@ export const Home: React.FC = () => (
     <ColorGradientCanvas className={styles.backdrop} />
     <h1 className={styles.heading}>
       <span>Kye Smith</span>
-      <Rubiks className={styles.rubiks} faceColors={rubiksFaceColors} />
+      <Rubiks
+        className={styles.rubiks}
+        faceColors={rubiksFaceColors}
+        whileHover={{
+          scale: [1, 1, 2, 1, 1],
+          rotate: [0, 0, 180, 180, 0],
+        }}
+        transition={{
+          duration: 1,
+        }}
+      />
     </h1>
     <h2 className={styles.subheading}>Frontend Developer</h2>
     <div className={styles.aboutWrapper}>
