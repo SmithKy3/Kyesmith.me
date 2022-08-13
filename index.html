@@ -21,7 +21,7 @@
       if (searchParams) {
         const searches = searchParams.split('&').reduce((result, query) => {
           const [queryKey, queryValue] = query.split('=');
-          result[query] = queryValue;
+          result[queryKey] = queryValue;
           return result;
         }, {});
 
