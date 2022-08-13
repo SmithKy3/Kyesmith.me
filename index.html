@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kye Smith - Frontend Developer</title>
     <meta
       name="description"
       content="Kye Smith's Frontend Developer Portfolio"
@@ -13,6 +11,30 @@
       name="keywords"
       content="kye,smith,web,developer,frontend,nextjs,react,redux,typescript"
     />
+    <title>Kye Smith - Frontend Developer</title>
+    <script type="text/javascript">
+      // Check if we have re-routed from the github pages 404 route.
+      // If we have, grab the intended route and add it to the browser's
+      // history so we don't have to re-route the user again.
+      const searchParams =
+        window.location.search.length > 0 && window.location.search.slice(1);
+      if (searchParams) {
+        const searches = searchParams.split('&').reduce((result, query) => {
+          const [queryKey, queryValue] = query.split('=');
+          result[query] = queryValue;
+          return result;
+        }, {});
+
+        if (searches.reroute) {
+          window.history.replaceState(
+            null,
+            undefined,
+            'https://kyesmith.me' + searches.reroute
+          );
+        }
+      }
+    </script>
+    <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
