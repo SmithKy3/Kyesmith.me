@@ -11,36 +11,36 @@
 }
 
 .iconsWrapper {
-  width: 30%;
+  width: max-content;
   height: 100%;
   margin-right: auto;
-  padding-left: 20px;
+  padding-left: 10px;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 25px;
 
   @include breakpoint('medium') {
-    width: 20%;
-    padding-left: 0;
-    justify-content: space-evenly;
+    padding-left: 25px;
   }
+}
 
-  > a {
-    height: 32px;
-    font-size: 32px;
-    color: var(--color--secondary);
-  }
+.icon {
+  width: 30px;
+  height: 30px;
+
+  fill: var(--color--secondary);
 }
 
 .githubIcon {
   &:hover {
-    color: var(--color--accentAlt);
+    fill: var(--color--accentAlt);
   }
 }
 
 .linkedinIcon {
   &:hover {
-    color: $linkedin-blue;
+    fill: $linkedin-blue;
   }
 }

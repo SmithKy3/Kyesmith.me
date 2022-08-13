@@ -1,3 +1,4 @@
+import { combineClassNames } from '@/utils/components';
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
@@ -11,14 +12,18 @@ export const Footer: React.FC = () => (
         href="https://github.com/SmithKy3"
         target="_blank"
       >
-        <FaGithub className={styles.githubIcon} />
+        <FaGithub
+          className={combineClassNames(styles.icon, styles.githubIcon)}
+        />
       </a>
       <a
         className={styles.link}
         href="https://uk.linkedin.com/in/kye-smith-121429165"
         target="_blank"
       >
-        <FaLinkedin className={styles.linkedinIcon} />
+        <FaLinkedin
+          className={combineClassNames(styles.icon, styles.linkedinIcon)}
+        />
       </a>
     </div>
   </footer>
