@@ -2,7 +2,6 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 import type { Mesh, ShaderMaterial } from 'three';
 import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
 
-import { combineClassNames } from '@/utils/components';
 import { useDarkModeContext } from '@/contexts/DarkModeContext';
 import {
   DarkColorGradientMaterial,
@@ -12,8 +11,6 @@ import {
   LightColorGradientMaterial,
   LightColorGradientMaterialProps,
 } from './LightColorGradientMaterial';
-
-import styles from './ColorGradientCanvas.module.scss';
 
 interface SceneProps {
   isDarkMode: boolean;
@@ -106,7 +103,7 @@ export const ColorGradientCanvas: React.FC<ColorGradientCanvasProps> = ({
   const { isDarkMode } = useDarkModeContext();
 
   return (
-    <div className={combineClassNames(styles.wrapper, className)}>
+    <div className={className}>
       {hasWebglContext && (
         <Canvas orthographic dpr={2}>
           <Scene isDarkMode={isDarkMode} onContextLoss={onWebglContextLoss} />
