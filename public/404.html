@@ -13,7 +13,13 @@
     />
     <title>Kye Smith - Frontend Developer</title>
     <script type="text/javascript">
-      const intendedRoute = window.location.split('kyesmith.me')[1];
+      // GitHub pages doesn't route users to the the index.html file for the site,
+      // so fresh requests (e.g. a bookmark or refresh) to anything other than the
+      // home page result in a standard gh-pages 404 page.
+      // To prevent this, we can redirect users to the home page, and add a search
+      // parameter of the intended route to the URL. We can then pick this up in
+      // index.html and handle it accordingly
+      const intendedRoute = window.location.href.split('kyesmith.me')[1];
       if (intendedRoute) {
         window.location = 'https://kyesmith.me?reroute=' + intendedRoute;
       }
