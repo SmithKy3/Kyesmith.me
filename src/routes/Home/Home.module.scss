@@ -9,6 +9,7 @@
   left: 0;
   width: 100vw;
   height: calc(100vh - #{$footer-height});
+  background-color: $darkGreen;
   z-index: -1;
 }
 

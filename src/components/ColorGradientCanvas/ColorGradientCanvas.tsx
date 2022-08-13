@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import type { Mesh, ShaderMaterial } from 'three';
 import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
 
@@ -15,6 +15,11 @@ import {
 
 import styles from './ColorGradientCanvas.module.scss';
 
+interface SceneProps {
+  isDarkMode: boolean;
+  onContextLoss: () => void;
+}
+
 export interface ColorGradientCanvasProps {
   className?: string;
 }
@@ -25,7 +30,7 @@ type MaterialProps =
 
 extend({ DarkColorGradientMaterial, LightColorGradientMaterial });
 
-const CanvasInner: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
+const Scene: React.FC<SceneProps> = ({ isDarkMode, onContextLoss }) => {
   const {
     size: { width, height },
   } = useThree();
@@ -60,7 +65,13 @@ const CanvasInner: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   );
 
   const meshRef = useRef<Mesh>();
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
+    const currentCanvasContext = state.gl.getContext();
+    if (!currentCanvasContext || currentCanvasContext.isContextLost()) {
+      onContextLoss();
+      return;
+    }
+
     if (!meshRef.current) return;
 
     const material = meshRef.current.material as ShaderMaterial;
@@ -87,13 +98,20 @@ const CanvasInner: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 export const ColorGradientCanvas: React.FC<ColorGradientCanvasProps> = ({
   className,
 }) => {
+  const [hasWebglContext, setHasWebglContext] = useState(true);
+  const onWebglContextLoss = useCallback(() => {
+    setHasWebglContext(false);
+  }, []);
+
   const { isDarkMode } = useDarkModeContext();
 
   return (
     <div className={combineClassNames(styles.wrapper, className)}>
-      <Canvas orthographic dpr={2}>
-        <CanvasInner isDarkMode={isDarkMode} />
-      </Canvas>
+      {hasWebglContext && (
+        <Canvas orthographic dpr={2}>
+          <Scene isDarkMode={isDarkMode} onContextLoss={onWebglContextLoss} />
+        </Canvas>
+      )}
     </div>
   );
 };
