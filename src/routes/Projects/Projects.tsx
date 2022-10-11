@@ -100,7 +100,7 @@ export const Projects: React.FC = () => (
           <p>
             During my final year at Sheffield university, I entered a
             competition to design the EEE (electronic and electrical
-            engineering) society's new log. Somehow I won and worked with the
+            engineering) society's new logo. Somehow I won and worked with the
             university design team to get the design ready for use across their
             websites, flyers, clothing etc. You can see the logo on their{' '}
             <BlockLink
@@ -109,6 +109,7 @@ export const Projects: React.FC = () => (
             >
               website
             </BlockLink>
+            .
           </p>
         }
       />
