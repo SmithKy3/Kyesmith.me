@@ -88,8 +88,8 @@ const Scene: React.FC<SceneProps> = ({ amplitude, isPlaying, speed }) => {
     }
   });
 
-  const meshRef = useRef<Mesh>();
-  const wireframeRef = useRef<LineSegments>();
+  const meshRef = useRef<Mesh>(null);
+  const wireframeRef = useRef<LineSegments>(null);
 
   return (
     <React.Fragment>

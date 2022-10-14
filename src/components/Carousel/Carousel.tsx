@@ -28,6 +28,7 @@ export interface CarouselOptions {
 
 export type CarouselProps = Omit<CarouselBreakpointData, 'breakpoint'> & {
   name: string;
+  children?: React.ReactNode;
   options?: CarouselOptions;
 };
 

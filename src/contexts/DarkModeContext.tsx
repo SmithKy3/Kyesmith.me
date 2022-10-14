@@ -11,6 +11,10 @@ export interface DarkModeContext {
   toggleDarkMode: () => void;
 }
 
+export interface DarkModeContextProviderProps {
+  children?: React.ReactNode;
+}
+
 const DARK_MODE_KEY = 'KyeSmith.me-darkModeEnabled';
 const DARK_MODE_CLASS = 'dark';
 
@@ -35,7 +39,9 @@ function applyDarkModeState(isDarkMode: boolean) {
   window.localStorage.setItem(DARK_MODE_KEY, JSON.stringify(isDarkMode));
 }
 
-export const DarkModeContextProvider: React.FC<{}> = ({ children }) => {
+export const DarkModeContextProvider: React.FC<
+  DarkModeContextProviderProps
+> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleDarkMode = useCallback(() => {
     setIsDarkMode((currentValue) => {

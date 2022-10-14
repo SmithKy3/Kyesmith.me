@@ -9,8 +9,8 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       blobCanvasMaterial: BlobCanvasMaterialProps;
-      lightColorGradientMaterial: LightColorGradientMaterialProps;
-      darkColorGradientMaterial: DarkColorGradientMaterialProps;
+      lightColorGradientMaterial: {};
+      darkColorGradientMaterial: {};
     }
   }
 }

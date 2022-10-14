@@ -4,6 +4,7 @@ import styles from './BlockLink.module.scss';
 
 export interface BlockLinkProps {
   href: string;
+  children?: React.ReactNode;
   openInNewTab?: boolean;
 }
 

@@ -6,6 +6,7 @@ import { combineClassNames } from '@/utils/components';
 import styles from './WarpSpeedCanvas.module.scss';
 
 export interface WarpSpeedCanvasProps {
+  children?: React.ReactNode;
   className?: string;
 }
 

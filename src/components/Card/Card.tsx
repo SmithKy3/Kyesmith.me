@@ -6,6 +6,7 @@ import { combineClassNames } from '@/utils/components';
 import styles from './Card.module.scss';
 
 export interface CardProps extends MotionProps {
+  children?: React.ReactNode;
   className?: string;
 }
 

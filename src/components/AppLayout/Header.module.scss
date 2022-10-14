@@ -32,14 +32,15 @@
   align-items: center;
   color: var(--color--secondary);
   text-decoration: none;
+  font-weight: 500;
   border-width: 0 0 2px 0;
   border-style: solid;
   border-color: transparent;
   transition: color 0.3s, border-color 0.3s;
 
   &:hover {
-    color: var(--color--accentAlt);
-    border-color: var(--color--accentAlt);
+    color: var(--color--accent);
+    border-color: var(--color--accent);
   }
 
   @include breakpoint('medium') {
@@ -48,8 +49,8 @@
 }
 
 .activeNavLink {
-  color: var(--color--accent);
-  border-color: var(--color--accent);
+  color: var(--color--accentAlt);
+  border-color: var(--color--accentAlt);
 }
 
 .themeToggleButton {
@@ -71,7 +72,7 @@
   &:hover,
   &:active {
     > svg {
-      fill: var(--color--accent);
+      fill: var(--color--accentAlt);
     }
   }
 }

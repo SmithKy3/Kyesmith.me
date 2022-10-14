@@ -4,9 +4,9 @@
 body {
   &:not(.dark) {
     --color--primary: #{$white};
-    --color--secondary: #{$darkGreen};
+    --color--secondary: #{$black};
     --color--tertiary: #{$lightGrey};
-    --color--accent: #{$lightGreen};
+    --color--accent: #{$darkBlue};
     --color--accentAlt: #{$yellow};
     --color--glass: rgba(3, 2, 2, 0.2);
   }

@@ -5,7 +5,11 @@ import { Footer } from './Footer';
 
 import styles from './AppLayout.module.scss';
 
-export const AppLayout: React.FC = ({ children }) => (
+export interface AppLayoutProps {
+  children?: React.ReactNode;
+}
+
+export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => (
   <React.Fragment>
     <Header />
     <main className={styles.contentWrapper}>

@@ -6,6 +6,7 @@ import { combineClassNames } from '@/utils/components';
 import styles from './FancyContainer.module.scss';
 
 interface FanycyContainerProps {
+  children?: React.ReactNode;
   className?: string;
 }
 interface FancyContainerState {
