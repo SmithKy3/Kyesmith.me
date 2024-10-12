@@ -1,5 +1,5 @@
 {
-  "name": "vite",
+  "name": "kyesmith-personal-website",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -9,29 +9,29 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^9.34.3",
-    "@react-three/fiber": "^8.8.0",
-    "framer-motion": "^6.2.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.3.1",
-    "react-router": "6.3.0",
-    "react-router-dom": "6.3.0",
+    "@react-three/drei": "^9.114.3",
+    "@react-three/fiber": "^8.17.10",
+    "framer-motion": "^6.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^4.12.0",
+    "react-router": "6.27.0",
+    "react-router-dom": "6.27.0",
     "react-syntax-highlighter": "^15.5.0",
-    "sass": "^1.49.8",
+    "sass": "^1.79.5",
     "simplex-noise": "^3.0.1",
-    "three": "^0.145.0",
+    "three": "^0.169.0",
     "warpspeed": "^2.0.6"
   },
   "devDependencies": {
-    "@rollup/plugin-replace": "^2.2.1",
-    "@types/node": "^17.0.18",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "@types/react-syntax-highlighter": "^15.5.1",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/three": "^0.144.0",
-    "@vitejs/plugin-react": "^1.0.7",
-    "typescript": "^4.2.4",
-    "vite": "^2.5.0"
-  }
+    "@vitejs/plugin-react": "^4.3.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.8"
+  },
+  "packageManager": "yarn@4.5.0"
 }
