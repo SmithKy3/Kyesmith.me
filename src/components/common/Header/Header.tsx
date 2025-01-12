@@ -7,7 +7,7 @@ import {
   useMantineColorScheme,
 } from '@mantine/core';
 
-import { Nav, NavItem } from '@/components/common/Navigation/Navigation';
+// import { Nav, NavItem } from '@/components/common/Navigation/Navigation';
 
 import styles from './Header.module.css';
 
@@ -22,14 +22,14 @@ export const Header: React.FC = () => {
 
   return (
     <AppShell.Header className={styles.header}>
-      <Nav>
+      {/* <Nav>
         <NavItem icon="🏠" to="/">
           Home
         </NavItem>
         <NavItem icon="💼" to="/projects">
           Projects
         </NavItem>
-      </Nav>
+      </Nav> */}
       <div className={styles.actions}>
         <Switch
           checked={isLightMode}
