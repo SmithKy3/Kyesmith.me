@@ -14,7 +14,12 @@
   gap: var(--mantine-spacing-sm);
   padding: 0 var(--mantine-spacing-xs);
 
-  @media (min-width: $mantine-breakpoint-md) {
+  @media (min-width: $mantine-breakpoint-sm) {
     gap: var(--mantine-spacing-md);
   }
+}
+
+.colorModeLabel {
+  font-family: 'Noto Color Emoji', serif;
+  font-size: var(--mantine-font-size-lg);
 }

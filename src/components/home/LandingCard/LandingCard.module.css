@@ -1,0 +1,13 @@
+.card {
+  width: 100%;
+  border-radius: var(--mantine-radius-lg);
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    max-width: 600px;
+  }
+}
+
+.canvas {
+  width: 100%;
+  height: 175px;
+}

@@ -1,0 +1,7 @@
+.rubiks {
+  width: 10vw;
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    width: 5vw;
+  }
+}

@@ -18,10 +18,15 @@
   gap: var(--mantine-spacing-xs);
   padding: 0 var(--mantine-spacing-xs);
   text-decoration: none;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: transparent;
 
   .text {
     display: none;
+    font-family: 'Quantico', serif;
     font-size: var(--mantine-font-size-lg);
+    font-weight: 600;
 
     @media (min-width: $mantine-breakpoint-sm) {
       display: block;
@@ -29,7 +34,10 @@
   }
 }
 
+.navItemIcon {
+  font-family: 'Noto Color Emoji', serif;
+}
+
 .activeNavItem {
-  border-width: 0 0 1px 0;
-  border-style: solid;
+  border-color: unset;
 }

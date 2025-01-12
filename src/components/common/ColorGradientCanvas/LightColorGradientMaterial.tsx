@@ -1,3 +1,4 @@
+import { DEFAULT_THEME } from '@mantine/core';
 import { Color } from 'three';
 import { shaderMaterial } from '@react-three/drei';
 
@@ -7,8 +8,8 @@ import vertexShader from './shaders/vertex.glsl?raw';
 export const LightColorGradientMaterial = shaderMaterial(
   {
     u_time: 0,
-    u_colorA: new Color('#ffffff'),
-    u_colorB: new Color('#ffffff'),
+    u_colorA: new Color(DEFAULT_THEME.colors.violet[6]),
+    u_colorB: new Color(DEFAULT_THEME.colors.teal[8]),
   },
   vertexShader,
   fragmentShader,

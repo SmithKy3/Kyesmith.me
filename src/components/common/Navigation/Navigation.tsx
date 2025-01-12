@@ -1,8 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 
 import { To, useMatch, useResolvedPath } from 'react-router-dom';
-import { rem } from '@mantine/core';
-import { Icon as IconType } from '@tabler/icons-react';
 
 import { combineClassNames } from '@/utils/components';
 import { Link } from '@/components/common/Link';
@@ -10,15 +8,13 @@ import { Link } from '@/components/common/Link';
 import styles from './Navigation.module.css';
 
 export interface NavItemProps {
-  icon: IconType;
+  icon: string;
   to: To;
 }
 
-const NAV_ITEM_ICON_SIZE = rem(24);
-
 export const NavItem: React.FC<PropsWithChildren<NavItemProps>> = ({
   children,
-  icon: Icon,
+  icon,
   to,
 }) => {
   const resolved = useResolvedPath(to);
@@ -32,7 +28,7 @@ export const NavItem: React.FC<PropsWithChildren<NavItemProps>> = ({
       )}
       to={to}
     >
-      <Icon style={{ width: NAV_ITEM_ICON_SIZE, height: NAV_ITEM_ICON_SIZE }} />
+      <span className={styles.navItemIcon}>{icon}</span>
       <span className={styles.text}>{children}</span>
     </Link>
   );

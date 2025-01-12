@@ -19,8 +19,8 @@ const Scene: React.FC<SceneProps> = ({ isDarkMode }) => {
   } = useThree();
   const widthSegments = useMemo(() => Math.floor(width * 0.1), [width]);
   const heightSegments = useMemo(() => Math.floor(height * 0.1), [height]);
-  const planeParameters = useMemo(
-    () => ({ width, height, widthSegments, heightSegments }),
+  const planeArgs = useMemo<[number, number, number, number]>(
+    () => [width, height, widthSegments, heightSegments],
     [width, height, widthSegments, heightSegments],
   );
 
@@ -36,7 +36,7 @@ const Scene: React.FC<SceneProps> = ({ isDarkMode }) => {
 
   return (
     <mesh ref={meshRef}>
-      <planeGeometry parameters={planeParameters} />
+      <planeGeometry args={planeArgs} />
       {isDarkMode ? (
         <darkColorGradientMaterial />
       ) : (

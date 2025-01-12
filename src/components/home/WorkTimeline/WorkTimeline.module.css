@@ -1,0 +1,13 @@
+.itemBullet {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.itemTitle {
+  font-family: 'Quantico', serif;
+}

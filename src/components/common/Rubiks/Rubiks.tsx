@@ -1,25 +1,21 @@
 import React from 'react';
 
-import { motion, MotionProps } from 'framer-motion';
+import { combineClassNames } from '@/utils/components';
+import useMantineColorPrimaryShade from '@/hooks/useMantineColorPrimaryShade';
 
-export interface RubiksProps extends MotionProps {
+import styles from './Rubiks.module.css';
+
+export interface RubiksProps {
   className?: string;
-  faceColors?: Array<string>;
 }
 
-export const Rubiks: React.FC<RubiksProps> = ({
-  className,
-  faceColors,
-  ...motionProps
-}) => {
-  const [
-    faceOneColor = 'red',
-    faceTwoColor = 'yellow',
-    faceThreeColor = 'blue',
-  ] = faceColors || [];
+export const Rubiks: React.FC<RubiksProps> = ({ className }) => {
+  const faceOneColor = useMantineColorPrimaryShade('red');
+  const faceTwoColor = useMantineColorPrimaryShade('yellow');
+  const faceThreeColor = useMantineColorPrimaryShade('lime');
 
   return (
-    <motion.span className={className} {...motionProps}>
+    <span className={combineClassNames(styles.rubiks, className)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="93 57.331 421.484 487.379"
@@ -115,6 +111,6 @@ export const Rubiks: React.FC<RubiksProps> = ({
           </g>
         </g>
       </svg>
-    </motion.span>
+    </span>
   );
 };
